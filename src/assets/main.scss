@@ -1,0 +1,366 @@
+.header_wrapper.login_open, .header_wrapper.search_show {
+    z-index: 9999;
+    top: 0;
+}
+.header_wrapper {
+    top: 0;
+    z-index: 9;
+    width: 100%;
+}
+.top-header-strip {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 1%;
+    border-bottom: 1px solid #ccc;
+    background-color: #9d8b61;
+}
+.top-header-strip-left {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.top-header-strip-left p {
+    font-size: 13px;
+}
+
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.top-header-strip-right ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+dl, ol, ul {
+    margin-top: 0;
+}
+address, dl, ol, ul {
+    margin-bottom: 1rem;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.top-header-strip-right ul li {
+    padding: 0 10px;
+    color: #fff;
+}
+.flegDrop {
+    position: relative;
+    display: flex;
+}
+.top-header-strip-right .flegDrop .toggle-icon {
+    width: 50px;
+    padding-top: 2px;
+}
+
+.top-header-strip-right .toggle-icon {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.top-header-strip-right ul li a {
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+}
+.flegDrop a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.pull-right {
+    float: right;
+}
+a, a:hover {
+    color: #000;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.flegDrop img {
+    width: 16px;
+    margin-right: 5px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.top-header-strip-right ul li {
+    padding: 0 10px;
+    color: #fff;
+}
+
+.flegDrop {
+    position: relative;
+    display: flex;
+}
+.collapsing, .dropdown, .dropup {
+    position: relative;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.top-header-strip-right .flegDrop .toggle-icon {
+    width: 50px;
+    padding-top: 2px;
+}
+
+.top-header-strip-right .toggle-icon {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.top-header-strip-right ul li a {
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+}
+.flegDrop a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.pull-right {
+    float: right;
+}
+a, a:hover {
+    color: #000;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.top-header-strip-right ul li {
+    padding: 0 10px;
+    color: #fff;
+}
+
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.top-header-strip-right .toggle-icon {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.pull-right {
+    float: right;
+}
+
+.header {
+    width: 100%;
+    padding: 18px 20px 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+}
+.header.sticky .navbar {
+    width: 40%;
+}
+
+.header .navbar {
+    padding: 0;
+    margin-bottom: 0;
+    float: left;
+    position: static;
+}
+
+.navbar, .navbar>.container, .navbar>.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+nav {
+    display: block;
+}
+div#myNavbar {
+    padding: 0;
+    justify-content: center;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+.collapse {
+    display: none;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+
+dl, ol, ul {
+    margin-top: 0;
+}
+address, dl, ol, ul {
+    margin-bottom: 1rem;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.navbar-expand-md .navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav>li {
+    float: left;
+    list-style: none;
+}
+.collapsing, .dropdown, .dropup {
+    position: relative;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.navbar-expand-md .navbar-nav .nav-item.dropdown>a {
+    position: relative;
+}
+
+
+.header .navbar li a {
+    padding-bottom: 45px;
+    padding-top: 45px;
+}
+.navbar-expand-md .navbar-nav li a {
+    color: #303030!important;
+    font-weight: 400!important;
+}
+.header .navbar li a {
+    padding: 2rem 1rem 1.6rem;
+    padding-left: 10px!important;
+    padding-right: 15px!important;
+    margin: -2rem 0;
+    text-decoration: none;
+    font-family: "Jost-medium";
+}
+.header .navbar li a {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-nav>li>a {
+    padding: 15px 12px;
+    font-family: "Jost-medium";
+    color: #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.font-bold {
+    font-family: "jostbold";
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+a, a:hover {
+    color: #000;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+style attribute {
+    pointer-events: auto;
+}
+.navbar-nav>li {
+    float: left;
+    list-style: none;
+}
+.container-fluid.message-container {
+    margin-top: 0;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.page_loader {
+    text-align: center;
+}
+
+.page_loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(0,0%,100%,.8);
+    z-index: 99990;
+}
