@@ -101,8 +101,5 @@ div#myNavbar {
 
 .row{
     display: flex;
-}
-.logo{
-    background: transparent url('/src/assets/lgo.png') 0% 0% no-repeat padding-box;
-opacity: 1;
+    flex-wrap: wrap;
 }
