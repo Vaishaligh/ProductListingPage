@@ -1,86 +1,93 @@
 <template>
-<div class="header_wrapper  search_show">
+<!-- top header start -->
 <div class="top-header-strip">
   <div class="top-header-strip-left">
-    <p class="mb-0">
-        Biggest Online range of Pure Pashmina Shawls ! Shop Now.
+    <p>
+        COMPLIMENTARY GIFT BOX PACKING ON ALL PRE-PAID ORDERS
     </p>
   </div>
   <div class="top-header-strip-right">
     <ul>
-      <li class="nav-item dropdown flegDrop" style="pointer-events: auto;">
-        <a href="#" class="toggle-icon pull-right">
-          <img src="../assets/indFlag.jpg"/>INR
-        </a>
-      </li>
+      <li class="flegDrop">
+        <a href="#" class="toggle-icon pull-right"><img src=""/></a></li>
+      <li> 
+        <a href="#">our stores</a></li>
       <li>
-        <a href="#">Our stores </a>
-      </li>
-      <li class="logion option">
-        <a href="#"><span class="toggle-icon pull-right"></span>Login</a>
-      </li>
+        <a href="#">my account</a></li>
+      <li><a href="#">blog </a></li>
     </ul>
   </div>
 </div>
-<div class="header sticky" >
-  <nav class="navbar navbar-expand-md"> 
-    
-    <div id="myNavbar" class="">
-      <div class="mobile-menu-container">
-          <ul class="navbar-nav">
-            <li id="women1" class="nav-item dropdown" style="pointer-events: auto;">
-              <a class="nav-link font-bold dropdown_toggle" style="font-weight: bold;">WOMEN</a>
-            </li>
-            <li id="men27" class="nav-item dropdown" style="pointer-events: auto;">
-              <a class="nav-link font-bold dropdown_toggle" style="font-weight: bold;">MEN</a>
-            </li>
-             <li id="home41" class="nav-item dropdown" style="pointer-events: auto;">
-              <a class="nav-link font-bold dropdown_toggle" style="font-weight: bold;">SALE</a>
-            </li>
-             <li id="gift-cards434" class="nav-item dropdown" style="pointer-events: auto;">
-              <a class="nav-link font-bold dropdown_toggle" style="font-weight: bold;">CoLLECTION</a>
-            </li>
-          </ul>
-      </div>
-    </div>
-  </nav>
-  <a class="navbar-brand desktop-logo nuxt-link-active">
-    <img src="../assets/logo.svg" alt="Ahujasons" title="ahujasons"/>
-  </a>
-  <div class="user-logins">
-    <div class="rightNav for-desktop">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown float-left">
-          <a href="" class="nav-link font-bold dropdown_toggle">OUR STORY</a>
-          </li>
-          <li class="nav-item float-left">
-          <a href="" class="nav-link font-bold">CRAFTMANSHIP</a>
-          </li>
-      </ul>
-    </div>
-    <div class="user-logins-icons">
-      <ul>
-        <li class=" flegDrop for_mobile_only">
-          <a class="">
-            <span>
-              <i aria-hidden="true" class="fa fa-heart-o"></i>
-            </span>
-            wishlist
-          </a>
-        </li>
-      </ul>
-    </div>
+<!-- top header end -->
+<!--header start -->
+<div class="header" >
+ <nav class="navbar navbar-expand-lg navbar-light ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sale<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Collection
+        </a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link " href="#" >
+      <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons"/>
+     </a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Our Story
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span>CRAFTMANSHIP</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link " href="#" >
+      <img src="../assets/search.png" alt="" title=""/>
+     </a>
+      </li>
+       <li class="nav-item " >
+        <a class="nav-link " href="#" >
+      <img src="../assets/wishlist.png" alt="" title=""/>
+     </a>
+      </li>
+       <li class="nav-item " >
+        <a class="nav-link " href="#" >
+      <img src="../assets/cart.png" alt="" title=""/>
+     </a>
+      </li>
+     </ul>
   </div>
-</div>
-</div>
-<div class="container-fluid message-container">
-  <div id="page_loader" class="page_loader" style="display:none"></div>
-  
-</div>
-<div id="st-container-hide"></div>
-
-
-
+  </nav>
+ </div>
+ <!--header end -->
+<div>
+  <div class="container-fluid ">
+    <div class="col-md-12 ">
+      <div class="item">
+        <h1>Women Pashima shawls</h1>
+        <p>810 items</p>
+        </div>
+      </div>
+  </div>
+ </div>
 </template>
 
 <script>
@@ -89,6 +96,7 @@
 // import VueAxios from 'vue-axios';
 
 // Vue.use(VueAxios, axios);
+
 export default {
   name: 'ProductListPage',
   props: {
@@ -102,9 +110,8 @@ export default {
   // }
 }
 </script>
-<style>
-  @import "../assets/main.scss";
-
-
-
+<style lang="css">
+@import'~bootstrap/dist/css/bootstrap.css';
+@import "../assets/main.scss";
 </style>
+
