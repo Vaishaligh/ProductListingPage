@@ -1,6 +1,34 @@
+@font-face {
+    font-family: 'ralewaylight';
+    src: url('fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('fonts/raleway-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'jost-regular';
+    src: url('fonts/Jost-Regular-400.woff') format('woff2'),
+         url('fonts/Jost-Regular-400.woff2') format('woff');
+    font-weight: normal;
+}
+@font-face {
+    font-family:'Playfair Display, Regular';
+    src: url('fonts/PlayfairDisplay-Regular.woff') format('woff2'),
+         url('fonts/PlayfairDisplay-Regular.woff2') format('woff');
+    font-weight: normal;
+}
+@font-face {
+    font-family:'Jost, Medium';
+    src: url('fonts/Jost-Medium-500.woff') format('woff2'),
+         url('fonts/Jost-Medium-500.woff2') format('woff');
+    font-weight: normal;
+}
 *{
     margin: 0;
     padding: 0;
+}
+body{
+    font-family: 'jost-regular';
 }
 .top-header-strip {
     display: flex;
@@ -12,7 +40,6 @@
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: Jost, Regular;
 }
 .top-header-strip-right ul {
     margin: 0;
@@ -46,7 +73,6 @@
     text-transform: uppercase;
     font-size: 14px;
     cursor: pointer;
-    font-family: Jost, Regular;
    
 }
 .flegDrop a {
@@ -90,19 +116,17 @@ div#myNavbar {
    display: flex; 
    margin-bottom: 0; 
     list-style: none;
+    align-items: center;
 }
 .navbar-nav .nav-item {
-    margin: 0 10px;
+    margin: 0 19px;
 }
 
 .item{
     text-align: center;
 }
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
+
 footer {
     background: #fbf7e8;
     float: left;
@@ -222,7 +246,6 @@ h2, h3, h4, h6 {
     text-align: left!important;
 }
 .block.newsletter h3 {
-    font-family: "Jost-regular";
     font-size: 16px;
 }
 h2, h3, h4, h6 {
@@ -235,7 +258,6 @@ h2, h3, h4, h6 {
     display: block;
     font-weight: 400;
     font-size: 13px;
-    font-family: "Jost-regular";
 }
 .form.subscribe {
     position: relative;
@@ -275,13 +297,175 @@ h2, h3, h4, h6 {
     margin-top: 0;
     box-sizing: border-box;
     cursor: pointer;
-    font-family: "Jost-regular";
+    
     font-weight: 700;
     text-align: revert;
 }
 .socialIcons {
-   
+    text-align: left;
     padding: 20px 0;
     display: inline-block;
     float: left;
+}
+.footerLogo:before, .footerLogoWrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.footerLogo:before {
+    content: "";
+    width: 98%;
+    height: 10px;
+    border: 1px solid #eae4cf;
+    border-right: none;
+    border-left: none;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.55);
+    text-transform: uppercase;
+}
+.navbar-nav .nav-item.dropdown>a {
+    font-family: Jost, Medium;
+   font-size: 16px;
+}
+
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.container-fluid.product-list-main {
+    background-color: #fff;
+    padding-top: 30px;
+    display: inline-block;
+}
+.product-list-main {
+    padding: 0;
+    
+   
+}
+.p-0 {
+    padding: 0!important;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.list-pages .row, .product-detailmain .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.product-list-main h1 {
+    display: inline-block;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 400px;
+    color: #303030;
+    padding-left: 10px;
+    margin-top: 3px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    font-family: "Playfair Display, Regular";
+    font-size: 32px;
+}
+.product-list-main p{
+    font-size: 18px;
+}
+.product-list-main .sidebar-main {
+    min-width: auto!important;
+  
+    margin-left: 0!important;
+    padding-right: 0;
+    flex-grow: 0!important;
+    flex-grow: 0;
+   
+}
+.product-list-main .product-section-main {
+    width: 81.5%;
+    max-width: 81.5%;
+    flex: 0 0 81.5%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+.hideFilterWrap {
+    float: right;
+    padding: 10px 15px!important;
+    cursor: pointer;
+    text-transform: uppercase!important;
+}
+
+
+.product-list .new-class .slide-box {
+    width: 100%;
+    display: inline-block;
+    border: 0;
+    margin-bottom: 25px;
+}
+
+
+.wishlist {
+    z-index: 2;
+    position: absolute;
+    right: 25px;
+    font-size: 0;
+    display: block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 30px;
+    opacity: 1;
+    color: #626262;
+    text-transform: uppercase;
+    text-decoration: none;
+    pointer-events: none;
+    padding-top: 7px;
+    transition: all .1s;
+    top: 5px;
+}
+.gh_logo_bottom {
+    width: 100%;
+    float: left;
+    text-align: right;
+    padding-right: 0;
+    margin: 0;
+    position: relative;
+}
+
+.gh_logo_bottom p {
+    color: #424242;
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+.pagination {
+    justify-content: center;
 }
