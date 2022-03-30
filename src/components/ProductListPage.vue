@@ -110,19 +110,19 @@
         </ul>
       </div>
       
-      <div class="" id="" style="margin-left:80px">
+      <div class="" id="" >
         <ul class="navbar-nav">
-         <li class="nav-item ">
+         <li class=" ">
             <a class="nav-link" href="#">
               <img src="../assets/search.png" alt="" title="" />
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="">
             <a class="nav-link" href="#">
               <img src="../assets/wishlist.png" alt="" title="" />
             </a>
           </li>
-          <li class="nav-item">
+          <li class="">
             <a class="nav-link" href="#">
               <img src="../assets/cart.png" alt="" title="" />
             </a>
@@ -173,7 +173,7 @@
       <div class="container-fluid d-inline-block p-0">
         <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -186,7 +186,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -199,7 +199,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -212,61 +212,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -281,7 +227,7 @@
         </div>
         <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -294,7 +240,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -307,7 +253,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -320,7 +266,61 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" style="width: 18rem">
+            <div class="slide-box" >
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box" >
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box" >
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box" >
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box" >
               <img
                 class="card-img-top"
                 src="../assets/card.png"
