@@ -1,5 +1,6 @@
 <template>
   <!-- top header start -->
+
   <div class="top-header-strip">
     <div class="top-header-strip-left">
       <p>COMPLIMENTARY GIFT BOX PACKING ON ALL PRE-PAID ORDERS</p>
@@ -35,7 +36,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -109,10 +110,10 @@
           </li>
         </ul>
       </div>
-      
-      <div class="" id="" >
+
+      <div class="" id="">
         <ul class="navbar-nav">
-         <li class=" ">
+          <li class=" ">
             <a class="nav-link" href="#">
               <img src="../assets/search.png" alt="" title="" />
             </a>
@@ -127,13 +128,11 @@
               <img src="../assets/cart.png" alt="" title="" />
             </a>
           </li>
-          
         </ul>
       </div>
-     
-
     </nav>
   </div>
+
   <!--header end -->
   <!--section start -->
   <div id="st-container">
@@ -173,74 +172,7 @@
       <div class="container-fluid d-inline-block p-0">
         <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -266,7 +198,20 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -281,7 +226,7 @@
         </div>
         <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -294,7 +239,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -307,7 +252,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -320,7 +265,61 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box" >
+            <div class="slide-box">
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box">
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box">
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box">
+              <img
+                class="card-img-top"
+                src="../assets/card.png"
+                alt="Card image cap"
+              /><a class="wishlist"><img src="../assets/wish.png" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Women Pashmina Shawl</h5>
+                <p class="card-text">Rs.150,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
+            <div class="slide-box">
               <img
                 class="card-img-top"
                 src="../assets/card.png"
@@ -358,19 +357,73 @@
 
   <footer id="footer" class="section-bg">
     <div class="footer_main_container">
-      <div class="footer_text_content"></div>
+      <div class="footer_text_content">
+        <span></span>
+      </div>
 
       <div class="footerLogo">
         <div class="footerLogoWrap">
           <img src="../assets/flogo.png" />
         </div>
       </div>
+      <div class="social-mob for-mobile-view">
+        <div class="customer_menu link_column home-links">
+          <h2>Follow Us</h2>
+          <div class="mobile-view">
+            <ul>
+              <li>
+                <a target=""><img src="../assets/facebook.svg" /></a>
+              </li>
+              <li>
+                <a target=""><img src="../assets/instagram.svg" /></a>
+              </li>
+              <li>
+                <a target=""><img src="../assets/linkedin.svg" /></a>
+              </li>
+              <li>
+                <a target=""><img src="../assets/pinterest.svg" /></a>
+              </li>
+              <li>
+                <a target=""><img src="../assets/twitter.svg" /></a>
+              </li>
+              <li>
+                <a target=""><img src="../assets/youtube.svg" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm-center for-mobile-view">
+        <div class="homepage_newsletter">
+          <div class="block newsletter">
+            <div class="title text-left">
+              <strong>Subscribe to our newsletter </strong>
+            </div>
+            <div class="content">
+              <form class="form subscribe">
+                <div class="field newsletter">
+                  <div class="control">
+                    <input name="email" type="text" id="newsletter" placeholder="Enter your email address"/>
+                  </div>
+                </div>
+                <div class="actions">
+                  <button id="Submit" title="Subscribe" class="action">
+                    <span>Subscribe</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
       <div class="footer-links-container">
         <div class="footer_links">
           <div class="customer_menu link_column home-links">
             <h2 class="">Shop</h2>
-            <ul>
+            <div class="mobile-view">
+               <ul>
               <li class="men">
                 <a href="#">Men</a>
               </li>
@@ -387,9 +440,12 @@
                 <a href="#">Collection</a>
               </li>
             </ul>
+            </div>
+           
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">QUICK LINKS</h2>
+            <div class="mobile-view">
             <ul>
               <li class="men">
                 <a href="#">Ahujasons Export</a>
@@ -410,9 +466,11 @@
                 <a href="#">Our Store Blogs </a>
               </li>
             </ul>
+            </div>
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">CUSTOMER SERVICE</h2>
+            <div class="mobile-view">
             <ul>
               <li class="men">
                 <a href="#">Terms and Condition </a>
@@ -430,9 +488,11 @@
                 <a href="#">Store appointment</a>
               </li>
             </ul>
+            </div>
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">MY PROFILE</h2>
+            <div class="mobile-view">
             <ul>
               <li class="men">
                 <a href="#">My Account </a>
@@ -450,6 +510,10 @@
                 <a href="#">Order History</a>
               </li>
             </ul>
+            </div>
+          </div>
+          <div class="gh_logo_bottom for-mobile-view mobile-copyright">
+            <p>Copyright © 2021 by Ahujasons | Powered by GreenHonchos</p>
           </div>
         </div>
         <div class="footer-btm-center for-dekhtop-view">
