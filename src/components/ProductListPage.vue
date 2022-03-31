@@ -22,20 +22,10 @@
   </div>
   <!-- top header end -->
   <!--header start -->
-  <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="top-header">
+    
+    <nav class="header navbar-light">
+      <div class="left-menu">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a
@@ -83,14 +73,15 @@
           </li>
         </ul>
       </div>
+      <div class="top-logo">
+        <a class="navbar-brand nuxt-link-active" href="#">
+          <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons" />
+        </a>
+      </div>
 
-      <a class="navbar-brand desktop-logo nuxt-link-active" href="#">
-        <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons" />
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="right-menu">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown float-left">
+          <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -103,7 +94,7 @@
               Our Story
             </a>
           </li>
-          <li class="nav-item float-left">
+          <li class="nav-item">
             <a class="nav-link" href="#"
               ><span class="sr-only">(current)</span>CRAFTMANSHIP</a
             >
@@ -111,19 +102,19 @@
         </ul>
       </div>
 
-      <div class="" id="">
+      <div class="top-icon">
         <ul class="navbar-nav">
-          <li class=" ">
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <img src="../assets/search.png" alt="" title="" />
             </a>
           </li>
-          <li class="">
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <img src="../assets/wishlist.png" alt="" title="" />
             </a>
           </li>
-          <li class="">
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <img src="../assets/cart.png" alt="" title="" />
             </a>
@@ -147,25 +138,23 @@
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row">
-          <div class="col-md-2 col-12 sidebar-main">
+          <div class="col-md-6 col-12 ">
             <h3>
               <p class="hideFilterWrap">
                 <img src="../assets/filter-icon.svg" /><span>Hide Filter</span>
               </p>
             </h3>
           </div>
-          <div class="col-md-10 col-12 product-section-main">
-            <div class="sortnew">
-              <strong
-                >Sort by :<span class="sortby-arrow"
-                  >Price low to high</span
-                ></strong
-              >
-              <ul class="sort-list">
-                <li class="">Price: Low to High</li>
-                <li class="">price: High to Low</li>
-              </ul>
-            </div>
+          <div class="col-md-6 col-12 ">
+           
+            <select class="sortnew">
+                <option selected="selected"><strong>Sort By</strong></option>
+                <option value="price_low">Price (Low to High)</option>
+                <option value="selling_price">Price (High to Low)</option>
+                <option value="discount">Discount</option>
+               <option value="newest">Newest</option>
+              </select>
+         
           </div>
         </div>
       </div>
@@ -403,7 +392,12 @@
               <form class="form subscribe">
                 <div class="field newsletter">
                   <div class="control">
-                    <input name="email" type="text" id="newsletter" placeholder="Enter your email address"/>
+                    <input
+                      name="email"
+                      type="text"
+                      id="newsletter"
+                      placeholder="Enter your email address"
+                    />
                   </div>
                 </div>
                 <div class="actions">
@@ -415,7 +409,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="footer-links-container">
@@ -423,93 +416,92 @@
           <div class="customer_menu link_column home-links">
             <h2 class="">Shop</h2>
             <div class="mobile-view">
-               <ul>
-              <li class="men">
-                <a href="#">Men</a>
-              </li>
-              <li class="woman">
-                <a href="#">Woman</a>
-              </li>
-              <li class="home">
-                <a href="#">Home</a>
-              </li>
-              <li class="sale">
-                <a href="#">Sale</a>
-              </li>
-              <li class="collection">
-                <a href="#">Collection</a>
-              </li>
-            </ul>
+              <ul>
+                <li class="men">
+                  <a href="#">Men</a>
+                </li>
+                <li class="woman">
+                  <a href="#">Woman</a>
+                </li>
+                <li class="home">
+                  <a href="#">Home</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Sale</a>
+                </li>
+                <li class="collection">
+                  <a href="#">Collection</a>
+                </li>
+              </ul>
             </div>
-           
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">QUICK LINKS</h2>
             <div class="mobile-view">
-            <ul>
-              <li class="men">
-                <a href="#">Ahujasons Export</a>
-              </li>
-              <li class="woman">
-                <a href="#">Ahujasons Wholesale</a>
-              </li>
-              <li class="our story">
-                <a href="#">Our Story</a>
-              </li>
-              <li class="legacy">
-                <a href="#">Legacy</a>
-              </li>
-              <li class="craftman ship">
-                <a href="#">Craftsman ship </a>
-              </li>
-              <li class="our store blogs">
-                <a href="#">Our Store Blogs </a>
-              </li>
-            </ul>
+              <ul>
+                <li class="men">
+                  <a href="#">Ahujasons Export</a>
+                </li>
+                <li class="woman">
+                  <a href="#">Ahujasons Wholesale</a>
+                </li>
+                <li class="our story">
+                  <a href="#">Our Story</a>
+                </li>
+                <li class="legacy">
+                  <a href="#">Legacy</a>
+                </li>
+                <li class="craftman ship">
+                  <a href="#">Craftsman ship </a>
+                </li>
+                <li class="our store blogs">
+                  <a href="#">Our Store Blogs </a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">CUSTOMER SERVICE</h2>
             <div class="mobile-view">
-            <ul>
-              <li class="men">
-                <a href="#">Terms and Condition </a>
-              </li>
-              <li class="woman">
-                <a href="#">Shipping & Delivery</a>
-              </li>
-              <li class="home">
-                <a href="#">Returns & Cancellation</a>
-              </li>
-              <li class="sale">
-                <a href="#">Contact us </a>
-              </li>
-              <li class="collection">
-                <a href="#">Store appointment</a>
-              </li>
-            </ul>
+              <ul>
+                <li class="men">
+                  <a href="#">Terms and Condition </a>
+                </li>
+                <li class="woman">
+                  <a href="#">Shipping & Delivery</a>
+                </li>
+                <li class="home">
+                  <a href="#">Returns & Cancellation</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Contact us </a>
+                </li>
+                <li class="collection">
+                  <a href="#">Store appointment</a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="customer_menu link_column home-links">
             <h2 class="">MY PROFILE</h2>
             <div class="mobile-view">
-            <ul>
-              <li class="men">
-                <a href="#">My Account </a>
-              </li>
-              <li class="woman">
-                <a href="#">Track Order</a>
-              </li>
-              <li class="home">
-                <a href="#">My Cart</a>
-              </li>
-              <li class="sale">
-                <a href="#">Wishlist </a>
-              </li>
-              <li class="collection">
-                <a href="#">Order History</a>
-              </li>
-            </ul>
+              <ul>
+                <li class="men">
+                  <a href="#">My Account </a>
+                </li>
+                <li class="woman">
+                  <a href="#">Track Order</a>
+                </li>
+                <li class="home">
+                  <a href="#">My Cart</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Wishlist </a>
+                </li>
+                <li class="collection">
+                  <a href="#">Order History</a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="gh_logo_bottom for-mobile-view mobile-copyright">
