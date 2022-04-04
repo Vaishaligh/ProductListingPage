@@ -22,7 +22,7 @@
   </div>
   <!-- top header end -->
   <!--header start -->
-  <div class="top-header">
+  <div class="top-header for-dekhtop-view">
     <nav class="header navbar-light">
       <div class="left-menu">
         <ul class="navbar-nav">
@@ -171,11 +171,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-12 sidebar-main">
+        <div class="col-md-2 col-12 sidebar-main for-dekhtop-view">
           <nav id="sidebar">
-            <div class="sidebar-header">
-              <h3 class="font-bold">Filter</h3>
-            </div>
             <div class="accordion" id="filterAccordion">
               <div
                 class="accordion-item"
@@ -184,32 +181,33 @@
               >
                 <h2 class="accordion-header">
                   <button
-                    class="accordion-button"
+                    class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     :data-bs-target="'#' + filter.id"
                     aria-expanded="true"
                     :aria-controls="filter.id"
+                    v-on:click="isOptionFilter = !isOptionFilter"
                   >
                     {{ filter.filter_lable }}
                   </button>
                 </h2>
                 <div
+                  v-if="!isOptionFilter"
                   :id="filter.id"
-                  class="accordion-collapse collapse"
+                  class="accordion-collapse"
                   data-bs-parent="#filterAccordion"
                 >
                   <li
                     class="list-unstyled"
                     v-for="option in filter.options"
                     :key="option.value_key"
-                    
                   >
                     <a href="#"
                       ><input
                         type="checkbox"
                         class="checkbox"
-                        v-model="isFilter"
+                        v-bind="isFilter"
                         @change="filterProduct(option.value)"
                       /><span>{{ option.value }} ({{ option.total }})</span></a
                     >
@@ -510,6 +508,7 @@ export default {
       products: [],
       filters: [],
       isFilter: false,
+      isOptionFilter: true,
     };
   },
   async mounted() {
@@ -572,7 +571,8 @@ export default {
       this.isFilter = !this.isFilter;
       if (this.isFilter) {
         this.products = this.products.filter(
-          (product) => product.category === filtervalue
+          (product) => product.plus_size === filtervalue
+          
         );
       }
     },
