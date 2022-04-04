@@ -23,7 +23,6 @@
   <!-- top header end -->
   <!--header start -->
   <div class="top-header">
-    
     <nav class="header navbar-light">
       <div class="left-menu">
         <ul class="navbar-nav">
@@ -126,197 +125,127 @@
 
   <!--header end -->
   <!--section start -->
-  <div id="st-container">
+  <div id="container">
     <div class="container-fluid product-list-main">
-      <div class="container-fluid d-inline-block p-0">
-        <div class="col-md-12">
+      <div class="container-fluid d-inline-block">
+        <div class="col-md-12 product-cntr">
           <div class="item">
             <h1>Women Pashima shawls</h1>
-            <p>810 items</p>
+            <p>{{ products.length }} items</p>
           </div>
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row">
-          <div class="col-md-6 col-12 ">
-            <h3>
-              <p class="hideFilterWrap">
-                <img src="../assets/filter-icon.svg" /><span>Hide Filter</span>
-              </p>
-            </h3>
+          <div class="col-md-2 col-12 sidebar-main">
+            <div class="top" style="position: sticky; top: 115px">
+              <div class="sidebar-header">
+                <h3>
+                  <p class="hideFilterWrap">
+                    <img src="../assets/filter-icon.svg" /><span>Hide</span
+                    >Filter
+                  </p>
+                </h3>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6 col-12 ">
-           
-            <select class="sortnew">
-                <option selected="selected"><strong>Sort By</strong></option>
-                <option value="price_low">Price (Low to High)</option>
-                <option value="selling_price">Price (High to Low)</option>
-                <option value="discount">Discount</option>
-               <option value="newest">Newest</option>
-              </select>
-         
+          <div class="col-md-10 col-12 product-section-main">
+            <div class="row row-filter pr-3">
+              <div class="col-md-9 col-sm-9">
+                <div class="list-unstyled components"></div>
+                <div class="col-md-3 col-sm-3 product-sort">
+                  <select
+                    class="sortnew"
+                    v-model="selectedSorting"
+                    @change="sorting"
+                  >
+                    <option value="low_high">Price (Low to High)</option>
+                    <option value="high_low">Price (High to Low)</option>
+                    <option value="discount">Discount</option>
+                    <option value="product_position">Newest</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid d-inline-block p-0">
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
+      <div class="row">
+        <div class="col-md-2 col-12 sidebar-main">
+          <nav id="sidebar">
+            <div class="sidebar-header">
+              <h3 class="font-bold">Filter</h3>
+            </div>
+            <div class="accordion" id="filterAccordion">
+              <div
+                class="accordion-item"
+                v-for="(filter, index) in filters"
+                :key="index"
+              >
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    :data-bs-target="'#' + filter.id"
+                    aria-expanded="true"
+                    :aria-controls="filter.id"
+                  >
+                    {{ filter.filter_lable }}
+                  </button>
+                </h2>
+                <div
+                  :id="filter.id"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#filterAccordion"
+                >
+                  <li
+                    class="list-unstyled"
+                    v-for="option in filter.options"
+                    :key="option.value_key"
+                    
+                  >
+                    <a href="#"
+                      ><input
+                        type="checkbox"
+                        class="checkbox"
+                        v-model="isFilter"
+                        @change="filterProduct(option.value)"
+                      /><span>{{ option.value }} ({{ option.total }})</span></a
+                    >
+                  </li>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
+          </nav>
         </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 col-6 new-class">
-            <div class="slide-box">
-              <img
-                class="card-img-top"
-                src="../assets/card.png"
-                alt="Card image cap"
-              /><a class="wishlist"><img src="../assets/wish.png" /></a>
-              <div class="card-body">
-                <h5 class="card-title">Women Pashmina Shawl</h5>
-                <p class="card-text">Rs.150,000</p>
+        <div class="col-md-10 col-12 product-section-main">
+          <div class="col-md-12 product-list">
+            <div class="container-fluid d-inline-block p-0">
+              <div class="row">
+                <div
+                  class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
+                  v-for="product in products"
+                  :key="product.id"
+                >
+                  <div class="slide-box">
+                    <img
+                      class="card-img-top"
+                      :src="product.image"
+                      alt="Card image cap"
+                    /><a class="wishlist"><img src="../assets/wish.png" /></a>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">
+                        Rs.{{ product.selling_price }} {{ product.discount }}%
+                      </p>
+                      <p class="card-text">{{ product.size }}</p>
+                      <p class="card-text" style="color: green">
+                        {{ product.stock_status }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -571,23 +500,83 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import axios from 'axios';
-// import VueAxios from 'vue-axios';
-
-// Vue.use(VueAxios, axios);
-
+import axios from "axios";
 export default {
   name: "ProductListPage",
-  props: {
-    msg: String,
+  data() {
+    return {
+      selectedSorting: "A",
+      list: [],
+      products: [],
+      filters: [],
+      isFilter: false,
+    };
   },
-  // mounted() {
-  //   Vue.axios.get('https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=1&count=20&sort_by=&sort_dir=desc&filter=')
-  //   .then((resp)=>{
-  //     console.warn(resp)
-  //   })
-  // }
+  async mounted() {
+    let resp = await axios.get(
+      "https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=1&count=20&sort_by=&sort_dir=desc&filter="
+    );
+    console.warn("api data", resp.data.result.filters);
+    this.products = resp.data.result.products;
+    this.filters = resp.data.result.filters;
+  },
+  methods: {
+    sorting() {
+      if (this.selectedSorting == "low_high") {
+        this.products = this.products.sort(this.low_high);
+      } else if (this.selectedSorting == "high_low") {
+        this.products = this.products.sort(this.high_low);
+      } else if (this.selectedSorting == "discount") {
+        this.products = this.products.sort(this.discount);
+      } else if (this.selectedSorting == "product_position") {
+        this.products = this.products.sort(this.product_position);
+      }
+    },
+    low_high(a, b) {
+      if (a.price.toLowerCase() < b.price.toLowerCase()) {
+        return -1;
+      }
+      if (a.price.toLowerCase() > b.price.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    },
+    high_low(a, b) {
+      if (a.price.toLowerCase() > b.price.toLowerCase()) {
+        return -1;
+      }
+      if (a.price.toLowerCase() < b.price.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    },
+    discount(a, b) {
+      if (a.discount.toLowerCase() > b.discount.toLowerCase()) {
+        return -1;
+      }
+      if (a.discount.toLowerCase() < b.discount.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    },
+    product_position(a, b) {
+      if (a.product_position.toLowerCase() > b.product_position.toLowerCase()) {
+        return -1;
+      }
+      if (a.product_position.toLowerCase() < b.product_position.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    },
+    filterProduct(filtervalue) {
+      this.isFilter = !this.isFilter;
+      if (this.isFilter) {
+        this.products = this.products.filter(
+          (product) => product.category === filtervalue
+        );
+      }
+    },
+  },
 };
 </script>
 <style lang="css">
