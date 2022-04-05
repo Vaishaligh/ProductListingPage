@@ -571,7 +571,7 @@ export default {
       this.isFilter = !this.isFilter;
       if (this.isFilter) {
         this.products = this.products.filter(
-          (product) => product.plus_size === filtervalue
+          (product) => product.product_category === filtervalue
           
         );
       }
