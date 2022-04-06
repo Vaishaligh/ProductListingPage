@@ -22,6 +22,86 @@
   </div>
   <!-- top header end -->
   <!--header start -->
+  <div class="top-header for-mobile-view">
+    <nav class="header navbar-light">
+  
+        <button
+          type="button"
+          class="navbar-toggler collapsed"
+          v-on:click="isToggle = !isToggle"
+        >
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div v-if="!isToggle" class="collapse navbar-collapse  active" >
+          <div class="mobile-menu-container">
+            <div class="mobile-heading">
+              <h2>
+                <img src="../assets/login-mobile-icon.png" class="profile-icon"/>
+              </h2>
+              <div class="close">
+               <i class="fa fa-times" aria-hidden="true"></i>
+              </div>
+              <ul class="navbar-nav mobile-top-nav">
+                <li class="nav-item dropdown">
+                  <a href="">Login</a>
+                </li>
+              </ul>
+            </div>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Women</a>
+              </li>
+                 <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Men</a>
+              </li>
+                 <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Decor</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Online Exclusive Sale</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Our Story</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="" class="nav-link font-bold dropdown_toggle">Craftmanship</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+   
+      <div class="top-logo">
+        <a class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active" href="#">
+          <img src="../assets/mobile-logo.svg" alt="Ahujasons" title="ahujasons" />
+        </a>
+      </div>
+
+      <div class="top-icon">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../assets/selectCountry.png"
+            /></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../assets/search.png" alt="" title="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../assets/wishlist.png" alt="" title="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../assets/cart.png" alt="" title="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <div class="top-header for-dekhtop-view">
     <nav class="header navbar-light">
       <div class="left-menu">
@@ -170,6 +250,7 @@
           </div>
         </div>
       </div>
+      <div class="container-fluid d-inline-block p-0">
       <div class="row">
         <div class="col-md-2 col-12 sidebar-main for-dekhtop-view">
           <nav id="sidebar">
@@ -249,6 +330,7 @@
           </div>
         </div>
       </div>
+        </div>
     </div>
   </div>
   <!--section end -->
@@ -509,6 +591,7 @@ export default {
       filters: [],
       isFilter: false,
       isOptionFilter: true,
+      isToggle: true,
     };
   },
   async mounted() {
@@ -572,10 +655,12 @@ export default {
       if (this.isFilter) {
         this.products = this.products.filter(
           (product) => product.product_category === filtervalue
-          
         );
       }
     },
+  },
+  openSlideMenu() {
+    document.getElementById("menu");
   },
 };
 </script>
