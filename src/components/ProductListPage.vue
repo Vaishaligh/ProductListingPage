@@ -24,7 +24,7 @@
   <!--header start -->
   <div class="top-header for-mobile-view">
     <nav class="header navbar-light">
-  
+      <div>
         <button
           type="button"
           class="navbar-toggler collapsed"
@@ -32,47 +32,74 @@
         >
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div v-if="!isToggle" class="collapse navbar-collapse  active" >
+        <div v-if="!isToggle" class="collapse navbar-collapse active">
           <div class="mobile-menu-container">
             <div class="mobile-heading">
               <h2>
-                <img src="../assets/login-mobile-icon.png" class="profile-icon"/>
+                <img
+                  src="../assets/login-mobile-icon.png"
+                  class="profile-icon"
+                />
               </h2>
               <div class="close">
-               <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa fa-times" aria-hidden="true"></i>
               </div>
-              <ul class="navbar-nav mobile-top-nav">
+              <ul id="login-hide" class="navbar-nav mobile-top-nav">
                 <li class="nav-item dropdown">
-                  <a href="">Login</a>
+                  <a style="width: 100%"
+                    >Login
+                    <span class="toggle-icon pull-right"> </span>
+                  </a>
                 </li>
               </ul>
             </div>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Women</a>
-              </li>
-                 <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Men</a>
-              </li>
-                 <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Decor</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Online Exclusive Sale</a>
+                <a class="nav-link font-bold dropdown_toggle">Women</a>
+                <div class="dropdown-menu dropdown-main"></div>
+                <span class="toggle-icon"></span>
+                <div class="dropdown-menu dropdown-main">
+
+                </div>
               </li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Our Story</a>
+                <a class="nav-link font-bold dropdown_toggle">Men</a>
+                <div class="dropdown-menu dropdown-main"></div>
+                <span class="toggle-icon"></span>
               </li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link font-bold dropdown_toggle">Craftmanship</a>
+                <a class="nav-link font-bold dropdown_toggle">Decor</a>
+                <div class="dropdown-menu dropdown-main"></div>
+                <span class="toggle-icon"></span>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link font-bold dropdown_toggle"
+                  >Online Exclusive Sale</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link font-bold dropdown_toggle">Our Story</a>
+                <div class="dropdown-menu dropdown-main"></div>
+                <span class="toggle-icon"></span>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link font-bold dropdown_toggle">Craftmanship</a>
               </li>
             </ul>
           </div>
         </div>
-   
+      </div>
+
       <div class="top-logo">
-        <a class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active" href="#">
-          <img src="../assets/mobile-logo.svg" alt="Ahujasons" title="ahujasons" />
+        <a
+          class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active"
+          href="#"
+        >
+          <img
+            src="../assets/mobile-logo.svg"
+            alt="Ahujasons"
+            title="ahujasons"
+          />
         </a>
       </div>
 
@@ -216,112 +243,107 @@
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
-        <div class="row">
-          <div class="col-md-2 col-12 sidebar-main">
-            <div class="top" style="position: sticky; top: 115px">
-              <div class="sidebar-header">
-                <h3>
-                  <p class="hideFilterWrap">
-                    <img src="../assets/filter-icon.svg" /><span>Hide</span
-                    >Filter
-                  </p>
-                </h3>
-              </div>
+        <div class="row m-0">
+          <div class="col-md-2 col-12">
+            <div class="sidebar-header">
+              <h3>
+                <p class="hideFilterWrap">
+                  <img src="../assets/filter-icon.svg" /><span>Hide</span>Filter
+                </p>
+              </h3>
             </div>
           </div>
           <div class="col-md-10 col-12 product-section-main">
-            <div class="row row-filter pr-3">
-              <div class="col-md-9 col-sm-9">
-                <div class="list-unstyled components"></div>
-                <div class="col-md-3 col-sm-3 product-sort">
-                  <select
-                    class="sortnew"
-                    v-model="selectedSorting"
-                    @change="sorting"
-                  >
-                    <option value="low_high">Price (Low to High)</option>
-                    <option value="high_low">Price (High to Low)</option>
-                    <option value="discount">Discount</option>
-                    <option value="product_position">Newest</option>
-                  </select>
-                </div>
-              </div>
+            <div class="product-sort">
+              <select
+                class="sortnew"
+                v-model="selectedSorting"
+                @change="sorting"
+              >
+                <option value="low_high">Price (Low to High)</option>
+                <option value="high_low">Price (High to Low)</option>
+                <option value="discount">Discount</option>
+                <option value="product_position">Newest</option>
+              </select>
             </div>
           </div>
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
-      <div class="row">
-        <div class="col-md-2 col-12 sidebar-main for-dekhtop-view">
-          <nav id="sidebar">
-            <div class="accordion" id="filterAccordion">
-              <div
-                class="accordion-item"
-                v-for="(filter, index) in filters"
-                :key="index"
-              >
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    :data-bs-target="'#' + filter.id"
-                    aria-expanded="true"
-                    :aria-controls="filter.id"
-                    v-on:click="isOptionFilter = !isOptionFilter"
-                  >
-                    {{ filter.filter_lable }}
-                  </button>
-                </h2>
+        <div class="row m-0">
+          <div class="col-md-2 col-12 sidebar-main for-dekhtop-view">
+            <nav id="sidebar">
+              <div class="accordion" id="filterAccordion">
                 <div
-                  v-if="!isOptionFilter"
-                  :id="filter.id"
-                  class="accordion-collapse"
-                  data-bs-parent="#filterAccordion"
+                  class="accordion-item"
+                  v-for="(filter, index) in filters"
+                  :key="index"
                 >
-                  <li
-                    class="list-unstyled"
-                    v-for="option in filter.options"
-                    :key="option.value_key"
-                  >
-                    <a href="#"
-                      ><input
-                        type="checkbox"
-                        class="checkbox"
-                        v-bind="isFilter"
-                        @change="filterProduct(option.value)"
-                      /><span>{{ option.value }} ({{ option.total }})</span></a
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      :data-bs-target="'#' + filter.id"
+                      aria-expanded="true"
+                      :aria-controls="filter.id"
+                      v-on:click="filter.isOptionFilter = !filter.isOptionFilter"
                     >
-                  </li>
+                      {{ filter.filter_lable }}
+                    </button>
+                  </h2>
+                  <div
+                    v-if="filter.isOptionFilter"
+                    :id="filter.id"
+                    class="accordion-collapse"
+                    data-bs-parent="#filterAccordion"
+                  >
+                    <li
+                      class="list-unstyled"
+                      v-for="option in filter.options"
+                      :key="option.value_key"
+                    >
+                      <a href="#"
+                        ><input
+                          type="checkbox"
+                          class="checkbox"
+                          v-bind="isFilter"
+                          @change="filterProduct(option.value)"
+                        /><span
+                          >{{ option.value }} ({{ option.total }})</span
+                        ></a
+                      >
+                    </li>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
-        </div>
-        <div class="col-md-10 col-12 product-section-main">
-          <div class="col-md-12 product-list">
-            <div class="container-fluid d-inline-block p-0">
-              <div class="row">
-                <div
-                  class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
-                  v-for="product in products"
-                  :key="product.id"
-                >
-                  <div class="slide-box">
-                    <img
-                      class="card-img-top"
-                      :src="product.image"
-                      alt="Card image cap"
-                    /><a class="wishlist"><img src="../assets/wish.png" /></a>
-                    <div class="card-body">
-                      <h5 class="card-title">{{ product.name }}</h5>
-                      <p class="card-text">
-                        Rs.{{ product.selling_price }} {{ product.discount }}%
-                      </p>
-                      <p class="card-text">{{ product.size }}</p>
-                      <p class="card-text" style="color: green">
-                        {{ product.stock_status }}
-                      </p>
+            </nav>
+          </div>
+          <div class="col-md-10 col-12 product-section-main">
+            <div class="col-md-12 product-list">
+              <div class="container-fluid d-inline-block p-0">
+                <div class="row">
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
+                    v-for="product in products"
+                    :key="product.id"
+                  >
+                    <div class="slide-box">
+                      <img
+                        class="card-img-top"
+                        :src="product.image"
+                        alt="Card image cap"
+                      /><a class="wishlist"><img src="../assets/wish.png" /></a>
+                      <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">
+                          Rs.{{ product.selling_price }} {{ product.discount }}%
+                        </p>
+                       
+                        <p class="card-text" style="color: green">
+                          {{ product.stock_status }}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -330,12 +352,11 @@
           </div>
         </div>
       </div>
-        </div>
     </div>
   </div>
   <!--section end -->
   <!--pagination start -->
-  <div class="container-fluid" style="margin-top: 60px">
+  <div class="container-fluid" >
     <span class="page-count">Page 1 to 6</span>
     <ul class="pagination">
       <li class="page-item"><a class="page-1" aria-label="1">1</a></li>
@@ -580,6 +601,7 @@
 </template>
 
 <script>
+
 import axios from "axios";
 export default {
   name: "ProductListPage",
@@ -667,4 +689,22 @@ export default {
 <style lang="css">
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "../assets/main.scss";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
