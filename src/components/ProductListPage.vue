@@ -28,11 +28,11 @@
         <button
           type="button"
           class="navbar-toggler collapsed"
-          v-on:click="isToggle = !isToggle"
+          v-on:click="isHidden = false"
         >
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div v-if="!isToggle" class="collapse navbar-collapse active">
+        <div v-if="!isHidden" class="collapse navbar-collapse active">
           <div class="mobile-menu-container">
             <div class="mobile-heading">
               <h2>
@@ -41,14 +41,14 @@
                   class="profile-icon"
                 />
               </h2>
-              <div class="close">
+              <div class="close" v-on:click="isHidden = !isHidden">
                 <i class="fa fa-times" aria-hidden="true"></i>
               </div>
               <ul id="login-hide" class="navbar-nav mobile-top-nav">
                 <li class="nav-item dropdown">
                   <a style="width: 100%"
                     >Login
-                    <span class="toggle-icon pull-right"> </span>
+                   
                   </a>
                 </li>
               </ul>
@@ -57,30 +57,29 @@
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Women</a>
                 <div class="dropdown-menu dropdown-main"></div>
-                <span class="toggle-icon"></span>
-                <div class="dropdown-menu dropdown-main">
-
-                </div>
+               
+                
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Men</a>
                 <div class="dropdown-menu dropdown-main"></div>
-                <span class="toggle-icon"></span>
+            
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Decor</a>
                 <div class="dropdown-menu dropdown-main"></div>
-                <span class="toggle-icon"></span>
+              
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle"
                   >Online Exclusive Sale</a
                 >
+                <div class="dropdown-menu dropdown-main"></div>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Our Story</a>
                 <div class="dropdown-menu dropdown-main"></div>
-                <span class="toggle-icon"></span>
+               
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Craftmanship</a>
@@ -112,17 +111,17 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <img src="../assets/search.png" alt="" title="" />
+              <img src="../assets/search.svg" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <img src="../assets/wishlist.png" alt="" title="" />
+              <img src="../assets/wish.svg" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <img src="../assets/cart.png" alt="" title="" />
+              <img src="../assets/cart.svg" alt="" title="" />
             </a>
           </li>
         </ul>
@@ -238,17 +237,17 @@
         <div class="col-md-12 product-cntr">
           <div class="item">
             <h1>Women Pashima shawls</h1>
-            <p>{{ products.length }} items</p>
+            <p class="product-item">{{ products.length }} items</p>
           </div>
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
           <div class="col-md-2 col-12">
-            <div class="sidebar-header">
-              <h3>
-                <p class="hideFilterWrap">
-                  <img src="../assets/filter-icon.svg" /><span>Hide</span>Filter
+            <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
+              <h3 v-on:click="toggleButton()">
+                <p class="hideFilterWrap" >
+                  <img src="../assets/filter-icon.svg" />{{detailVisible ? "Hide Filter" : "Show Filter"}}
                 </p>
               </h3>
             </div>
@@ -260,6 +259,7 @@
                 v-model="selectedSorting"
                 @change="sorting"
               >
+                <option selected="selected">Sort By</option>
                 <option value="low_high">Price (Low to High)</option>
                 <option value="high_low">Price (High to Low)</option>
                 <option value="discount">Discount</option>
@@ -271,7 +271,7 @@
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
-          <div class="col-md-2 col-12 sidebar-main for-dekhtop-view">
+          <div class="col-md-2 col-12 sidebar-main " v-if="!isFilterToggle">
             <nav id="sidebar">
               <div class="accordion" id="filterAccordion">
                 <div
@@ -287,7 +287,9 @@
                       :data-bs-target="'#' + filter.id"
                       aria-expanded="true"
                       :aria-controls="filter.id"
-                      v-on:click="filter.isOptionFilter = !filter.isOptionFilter"
+                      v-on:click="
+                        filter.isOptionFilter = !filter.isOptionFilter
+                      "
                     >
                       {{ filter.filter_lable }}
                     </button>
@@ -308,7 +310,7 @@
                           type="checkbox"
                           class="checkbox"
                           v-bind="isFilter"
-                          @change="filterProduct(option.value)"
+                    
                         /><span
                           >{{ option.value }} ({{ option.total }})</span
                         ></a
@@ -339,7 +341,7 @@
                         <p class="card-text">
                           Rs.{{ product.selling_price }} {{ product.discount }}%
                         </p>
-                       
+
                         <p class="card-text" style="color: green">
                           {{ product.stock_status }}
                         </p>
@@ -356,7 +358,7 @@
   </div>
   <!--section end -->
   <!--pagination start -->
-  <div class="container-fluid" >
+  <div class="container-fluid">
     <span class="page-count">Page 1 to 6</span>
     <ul class="pagination">
       <li class="page-item"><a class="page-1" aria-label="1">1</a></li>
@@ -365,8 +367,8 @@
       <li class="page-item"><a class="" aria-label="4">4</a></li>
       <li class="page-item"><a class="" aria-label="5">5</a></li>
       <li class="page-item"><a class="" aria-label="6">6</a></li>
-      <li class="page-item">
-        <a class="next" aria-label="Next">Next<span>&raquo;</span></a>
+      <li class="page-item next">
+        <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
       </li>
     </ul>
   </div>
@@ -444,9 +446,28 @@
       <div class="footer-links-container">
         <div class="footer_links">
           <div class="customer_menu link_column home-links">
-            <h2 class="">Shop</h2>
-            <div class="mobile-view">
+            <h2 class="" v-on:click="isFooter1 = !isFooter1">Shop</h2>
+            <div class="for-mobile-view" v-if="!isFooter1">
               <ul>
+                <li class="men">
+                  <a href="#">Men</a>
+                </li>
+                <li class="woman">
+                  <a href="#">Woman</a>
+                </li>
+                <li class="home">
+                  <a href="#">Home</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Sale</a>
+                </li>
+                <li class="collection">
+                  <a href="#">Collection</a>
+                </li>
+              </ul>
+            </div>
+            <div class="for-dekhtop-view">
+             <ul>
                 <li class="men">
                   <a href="#">Men</a>
                 </li>
@@ -466,8 +487,30 @@
             </div>
           </div>
           <div class="customer_menu link_column home-links">
-            <h2 class="">QUICK LINKS</h2>
-            <div class="mobile-view">
+            <h2 class="" v-on:click="isFooter2 = !isFooter2">QUICK LINKS</h2>
+            <div class="for-mobile-view" v-if="!isFooter2">
+              <ul>
+                <li class="men">
+                  <a href="#">Ahujasons Export</a>
+                </li>
+                <li class="woman">
+                  <a href="#">Ahujasons Wholesale</a>
+                </li>
+                <li class="our story">
+                  <a href="#">Our Story</a>
+                </li>
+                <li class="legacy">
+                  <a href="#">Legacy</a>
+                </li>
+                <li class="craftman ship">
+                  <a href="#">Craftsman ship </a>
+                </li>
+                <li class="our store blogs">
+                  <a href="#">Our Store Blogs </a>
+                </li>
+              </ul>
+            </div>
+            <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
                   <a href="#">Ahujasons Export</a>
@@ -491,8 +534,27 @@
             </div>
           </div>
           <div class="customer_menu link_column home-links">
-            <h2 class="">CUSTOMER SERVICE</h2>
-            <div class="mobile-view">
+            <h2 class="" v-on:click="isFooter3 = !isFooter3">CUSTOMER SERVICE</h2>
+            <div class="for-mobile-view" v-if="!isFooter3">
+              <ul>
+                <li class="men">
+                  <a href="#">Terms and Condition </a>
+                </li>
+                <li class="woman">
+                  <a href="#">Shipping & Delivery</a>
+                </li>
+                <li class="home">
+                  <a href="#">Returns & Cancellation</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Contact us </a>
+                </li>
+                <li class="collection">
+                  <a href="#">Store appointment</a>
+                </li>
+              </ul>
+            </div>
+               <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
                   <a href="#">Terms and Condition </a>
@@ -513,8 +575,27 @@
             </div>
           </div>
           <div class="customer_menu link_column home-links">
-            <h2 class="">MY PROFILE</h2>
-            <div class="mobile-view">
+            <h2 class="" v-on:click="isFooter4 = !isFooter4">MY PROFILE</h2>
+            <div class="for-mobile-view" v-if="!isFooter4">
+              <ul>
+                <li class="men">
+                  <a href="#">My Account </a>
+                </li>
+                <li class="woman">
+                  <a href="#">Track Order</a>
+                </li>
+                <li class="home">
+                  <a href="#">My Cart</a>
+                </li>
+                <li class="sale">
+                  <a href="#">Wishlist </a>
+                </li>
+                <li class="collection">
+                  <a href="#">Order History</a>
+                </li>
+              </ul>
+            </div>
+             <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
                   <a href="#">My Account </a>
@@ -601,7 +682,6 @@
 </template>
 
 <script>
-
 import axios from "axios";
 export default {
   name: "ProductListPage",
@@ -613,7 +693,13 @@ export default {
       filters: [],
       isFilter: false,
       isOptionFilter: true,
-      isToggle: true,
+      isFilterToggle:true,
+      isFooter1:true,
+       isFooter2:true,
+        isFooter3:true,
+         isFooter4:true,
+      
+      isHidden: true,
     };
   },
   async mounted() {
@@ -625,6 +711,9 @@ export default {
     this.filters = resp.data.result.filters;
   },
   methods: {
+    toggleButton(){
+      this.detailVisible = !this.detailVisible
+    },
     sorting() {
       if (this.selectedSorting == "low_high") {
         this.products = this.products.sort(this.low_high);
@@ -689,22 +778,4 @@ export default {
 <style lang="css">
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "../assets/main.scss";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>

@@ -42,6 +42,8 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  color: #303030;
+  font-family: "jost-regular";
 }
 .top-header-strip-right ul {
   margin: 0;
@@ -52,7 +54,7 @@ body {
 
 .top-header-strip-right ul li {
   padding: 0 10px;
-  color: #000;
+  
 }
 .flegDrop {
   position: relative;
@@ -75,6 +77,8 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   cursor: pointer;
+  font-family: "jost-regular";
+  color: #303030;
 }
 .flegDrop a {
   display: flex;
@@ -128,7 +132,7 @@ width: 25%;
 
 }
 .navbar-nav .nav-item {
-  margin: 0 11px;
+  margin: 0 14px;
 }
 
 .navbar-brand {
@@ -210,8 +214,8 @@ img {
   margin-top: 3px;
   margin-bottom: 0;
   text-transform: capitalize;
-  font-family: "playFair";
-  font-size: 2rem;
+  font-family: "Playfair Display, Regular";
+  font-size: 32px;
 }
 
 .list-pages .row, .product-detailmain .row {
@@ -236,43 +240,38 @@ img {
 }
 
 .product-list-main h3 {
-  font-weight: 500;
+ 
   display: inline-block;
-  text-overflow: ellipsis;
-  
   overflow: hidden;
-  white-space: nowrap;
   font-size: 16px;
-  max-width: 400px;
-  color: #000;
-  padding-left: 30px;
-  margin-top: 3px;
-  margin-bottom: 0;
-  text-transform: capitalize;
-}
-.product-list-main p {
-  color: #303030;
   
-  text-transform: capitalize;
-  font-size: 14px;
+  font-family: "Jost, Medium";
+  color: #303030;
+  padding-left: 20px;
+  text-transform: uppercase;
+
+}
+
+
+.product-item{
+  font-family: "jost-regular";
+  font-size: 18px;
+  color: #303030;
+  margin-top: 10px;
 }
 .hideFilterWrap {
-  display: flex;
-  border: 1px solid #ccc;
+   border: 1px solid #ccc;
   padding: 10px 15px!important;
   cursor: pointer;
-  text-transform: uppercase!important;
-  font-family: "Jost, Medium";
+  
 }
 .hideFilterWrap img {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .product-list-main p span {
-  color: #303030!important;
-  padding-right: 3px;
-  font-size: 14px!important;
-}
+   padding-right: 4px;
+  }
 
 .product-list-main .product-section-main {
   width: 81.5%;
@@ -281,6 +280,8 @@ img {
   
   
 }
+
+
 
 .list-pages .row, .product-detailmain .row {
   margin-right: 0;
@@ -316,10 +317,32 @@ img {
   box-sizing: border-box;
   border-radius: 2px;
 }
+
 .accordion-item {
   background-color: #fff;
   border: none
+  
 }
+.accordion-button {
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 1px solid hsla(0, 0%, 77.3%, 0.47059);
+  text-transform: uppercase;
+  color: #303030;
+  
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url(/src/assets/plus.svg);
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+
 
 .sortnew strong {
   font-weight: 600;
@@ -425,12 +448,7 @@ product-list-main .sidebar-main .components {
 }
 
 
-.sidebar-header h3 {
-  font-size: 16px;
-  text-transform: uppercase;
-  color: #000;
-  margin: 0;
-}
+
 .filter-box {
   border-bottom: 1px solid #ededed;
 }
@@ -445,10 +463,12 @@ product-list-main .sidebar-main .components {
 .list-unstyled {
   max-height: 250px;
   overflow: auto;
-  padding: 0 15px 15px;
+  padding: 0 0px 18px;
 }
 .list-unstyled a {
-  font-size: 14px;
+  color: #303030;
+  font-family: "Jost, Medium";
+  font-size: 16px;
   display: flex;
   padding: 15px 15px 0 22px;
   text-decoration: none;
@@ -514,13 +534,7 @@ product-list-main .sidebar-main .components {
   padding: 0 1%;
   box-sizing: border-box;
 }
-.footer_links .customer_menu h2 {
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #000;
-  font-family: jost-regular;
-}
+
 
 .customer_menu ul {
   margin: 0;
@@ -530,6 +544,11 @@ product-list-main .sidebar-main .components {
   margin: 10px 0;
   padding: 0;
   display: block;
+ 
+}
+.customer_menu ul li a{
+  font-family: "jost-regular";
+  font-size: 16px;
 }
 .footer_links .customer_menu {
   width: 25%;
@@ -537,10 +556,12 @@ product-list-main .sidebar-main .components {
   box-sizing: border-box;
 }
 .footer_links .customer_menu h2 {
+  font-weight: 600;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #303030;
+  font-family: "jost-regular";
 }
 .footer-btm-center {
   float: left;
@@ -566,13 +587,7 @@ product-list-main .sidebar-main .components {
 .block.newsletter h3 {
   font-size: 16px;
 }
-h2,
-h3,
-h4,
-h6 {
-  color: #252525;
-  font-weight: 600;
-}
+
 .newsletter .title strong {
   color: #000;
   text-align: left;
@@ -726,27 +741,40 @@ h6 {
   box-shadow: 2px 2px 2px hsl(0deg 0% 80% / 63%);
 }
 .socialIconsWrap a img {
-  padding: 20px;
+  padding-right: 25px;
+  padding-top: 15px;
 }
-
 
 
 .card-body {
   padding: 1rem 0rem;
+}
+.card-title {
+  font-family: "Jost, Medium";
+  font-size: 16px;
+  color: #0C0C0C;
+}
+.card-text {
+  font-family: "jost-regular";
+  font-size: 16px;
+  color: #4C0B36;
 }
 .pagination {
   justify-content: center;
 }
 
 .pagination li {
-  color: black;
+  color: #0C0C0C;
+  font-size: 16px;
+  font-family: "jost-regular";
   float: left;
-  padding: 1px 12px;
+  padding: 4px 18px;
   text-decoration: none;
 }
 .pagination li:hover {
   background: #8f5656;
   cursor: pointer;
+  color: white;
 }
 
 .next {
@@ -755,6 +783,9 @@ h6 {
 
 .page-count {
   position: absolute;
+  color: #0C0C0C;
+  font-size: 16px;
+  font-family: "jost-regular";
 }
 
 .user-logins {
@@ -781,10 +812,21 @@ h6 {
 }
 
 @media (max-width: 767px) {
+ 
+  .header {
+    width: 100%;
+    padding: 0px 20px 15px;
+    position: relative;
+    display: flex;
+    
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  }
   .product-list-main .product-section-main {
     width:100%;
     max-width: 100%;
-  flex: none;
+    flex: none;
     
     
   }
@@ -811,15 +853,14 @@ h6 {
     color: #000;
 }
   .header .navbar-toggler-icon {
-    width: 31px;
+  
     margin-top: 0;
     display: block;
-    height: 26px;
+   
 }
 .navbar-toggler-icon {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  
   vertical-align: middle;
   content: "";
   background: no-repeat 50%;
@@ -838,7 +879,7 @@ h6 {
 .navbar-brand>img {
     
     padding: 8px 17px;
-    margin-left: -191px;
+ 
 }
 .profile-icon {
   padding: 8px;
@@ -917,6 +958,7 @@ h6 {
   }
   .form.subscribe {
     width: 100%;
+    max-width: 100%;
   }
   .form.subscribe #newsletter {
     padding: 0 80px 0 15px;
@@ -945,8 +987,16 @@ h6 {
     margin-bottom: 0;
   }
   footer .footer_links h2:after {
-    content: "\f095";
-    font: normal normal normal 14px/1 FontAwesome;
+    
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url(/src/assets/plus.svg);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
     float: right;
   }
   .gh_logo_bottom.mobile-copyright {
@@ -1015,7 +1065,7 @@ h6 {
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;
-  margin: 0;
+ margin-left: 11px;
 }
 .mobile-heading .close {
   position: absolute;
