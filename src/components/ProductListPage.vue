@@ -243,7 +243,7 @@
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
-          <div class="col-md-2 col-12">
+          <div class="col-lg-6 col-sm-6">
             <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
               <h3 v-on:click="toggleButton()">
                 <p class="hideFilterWrap" >
@@ -252,7 +252,7 @@
               </h3>
             </div>
           </div>
-          <div class="col-md-10 col-12 product-section-main">
+          <div class="col-lg-6 col-sm-6">
             <div class="product-sort">
               <select
                 class="sortnew"
@@ -271,7 +271,7 @@
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
-          <div class="col-md-2 col-12 sidebar-main " v-if="!isFilterToggle">
+          <div class="col-lg-2 col-md-4" v-if="!isFilterToggle">
             <nav id="sidebar">
               <div class="accordion" id="filterAccordion">
                 <div
@@ -321,7 +321,38 @@
               </div>
             </nav>
           </div>
-          <div class="col-md-10 col-12 product-section-main">
+          <div class="col-lg-10 col-md-8" v-if="isFilterToggle == false">
+            <div class="col-md-12 product-list">
+              <div class="container-fluid d-inline-block p-0">
+                <div class="row">
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
+                    v-for="product in products"
+                    :key="product.id"
+                  >
+                    <div class="slide-box">
+                      <img
+                        class="card-img-top"
+                        :src="product.image"
+                        alt="Card image cap"
+                      /><a class="wishlist"><img src="../assets/wish.png" /></a>
+                      <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">
+                          Rs.{{ product.selling_price }} {{ product.discount }}%
+                        </p>
+
+                        <p class="card-text" style="color: green">
+                          {{ product.stock_status }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12" v-if="isFilterToggle == true" >
             <div class="col-md-12 product-list">
               <div class="container-fluid d-inline-block p-0">
                 <div class="row">
