@@ -204,10 +204,10 @@ img {
 }
 .product-list-main h1 {
   display: inline-block;
-  text-overflow: ellipsis;
+ 
   vertical-align: top;
   overflow: hidden;
-  white-space: nowrap;
+  
   max-width: 400px;
   color: #303030;
   padding-left: 10px;
@@ -810,9 +810,13 @@ product-list-main .sidebar-main .components {
   top: 50%;
   transform: translateY(-50%);
 }
+.product_error{
+  text-align: center;
+  text-transform: uppercase;
+}
 
 @media (max-width: 767px) {
- 
+
   .header {
     width: 100%;
     padding: 0px 20px 15px;
@@ -870,12 +874,7 @@ product-list-main .sidebar-main .components {
 
 
 
-.navbar-brand.mobile-logo {
-  display: block;
-  width: auto;
-  float: left;
-  
-}
+
 .navbar-brand>img {
     
     padding: 8px 17px;
@@ -1013,6 +1012,37 @@ product-list-main .sidebar-main .components {
 .navbar-expand-md .navbar-nav .nav-item.dropdown>a:after {
   font-size: 0;
 }
+
+.sortFilter{
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+  background: #fff;
+  display: flex;
+}
+
+.product-list-main h3 {
+  display: contents;
+  overflow: hidden;
+  text-align: center;
+  font-size: 16px;
+
+  color: #303030;
+  text-transform: uppercase;
+}
+.hideFilterWrap {
+    font-family: "Jost, Medium";
+  border: none;
+}
+.sortnew-m{
+  border: none;
+  padding: 7px 2px;
+}
+.navbar-nav .nav-item {
+  margin: 0 9px;
+}
+
 }
 @media screen and (max-width: 968px) {
   .footer-btm-center,

@@ -28,11 +28,11 @@
         <button
           type="button"
           class="navbar-toggler collapsed"
-          v-on:click="isHidden = false"
+          v-on:click="isHidden = !isHidden"
         >
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div v-if="!isHidden" class="collapse navbar-collapse active">
+        <div v-if="isHidden" class="collapse navbar-collapse active" :class="isHidden ? 'active' : '' ">
           <div class="mobile-menu-container">
             <div class="mobile-heading">
               <h2>
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="top-logo">
+      <div class="top-logo-m">
         <a
           class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active"
           href="#"
@@ -242,7 +242,7 @@
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
-        <div class="row m-0">
+        <div class="row m-0 for-dekhtop-view">
           <div class="col-lg-6 col-sm-6">
             <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
               <h3 v-on:click="toggleButton()">
@@ -266,11 +266,40 @@
                 <option value="product_position">Newest</option> -->
               </select>
             </div>
+            
+          </div>
+        </div>
+            <div class="row m-0 sortFilter for-mobile-view">
+          <div class="col-lg-6 col-sm-6">
+            <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
+              <h3 v-on:click="toggleButton()">
+                <p class="hideFilterWrap" >
+                  <img src="../assets/filter-icon.svg" />{{detailVisible ? "Hide Filter" : "Show Filter"}}
+                </p>
+              </h3>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="product-sort">
+              <select
+                class="sortnew-m"
+                v-model="selectedSorting"
+                @change="sorting"
+              >
+                <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
+                <!-- <option value="low_high">Price (Low to High)</option>
+                <option value="high_low">Price (High to Low)</option>
+                <option value="discount">Discount</option>
+                <option value="product_position">Newest</option> -->
+              </select>
+            </div>
+            
           </div>
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
+           
           <div class="col-lg-2 col-md-4" v-if="!isFilterToggle">
             <nav id="sidebar">
               <div class="accordion" id="filterAccordion">
@@ -388,7 +417,7 @@
               </div>
             </div>
           </div>
-          <div class="row">{{error_message}}</div>
+         <div class="product_error">{{error_message}}</div>
         </div>
       </div>
     </div>
@@ -732,10 +761,10 @@ export default {
       isOptionFilter: true,
       isFilterToggle:true,
       isFooter1:true,
-       isFooter2:true,
+      isFooter2:true,
       isFooter3:true,
       isFooter4:true,
-      isHidden: true,
+      isHidden: false,
       error_message: '',
        moreData: {
         page: 1,
