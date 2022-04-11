@@ -28,11 +28,11 @@
         <button
           type="button"
           class="navbar-toggler collapsed"
-          v-on:click="isHidden = !isHidden"
+          @click="openNav()"
         >
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div v-if="isHidden" class="collapse navbar-collapse active" :class="isHidden ? 'active' : '' ">
+        <div id="mySidenav" class="collapse navbar-collapse active" :class="isHidden ? 'active' : '' ">
           <div class="mobile-menu-container">
             <div class="mobile-heading">
               <h2>
@@ -41,7 +41,7 @@
                   class="profile-icon"
                 />
               </h2>
-              <div class="close" v-on:click="isHidden = !isHidden">
+              <div class="close" @click="closeNav()">
                 <i class="fa fa-times" aria-hidden="true"></i>
               </div>
               <ul id="login-hide" class="navbar-nav mobile-top-nav">
@@ -87,7 +87,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div class="top-logo-m">
         <a
@@ -260,10 +260,7 @@
                 @change="sorting"
               >
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
-                <!-- <option value="low_high">Price (Low to High)</option>
-                <option value="high_low">Price (High to Low)</option>
-                <option value="discount">Discount</option>
-                <option value="product_position">Newest</option> -->
+             
               </select>
             </div>
             
@@ -287,10 +284,7 @@
                 @change="sorting"
               >
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
-                <!-- <option value="low_high">Price (Low to High)</option>
-                <option value="high_low">Price (High to Low)</option>
-                <option value="discount">Discount</option>
-                <option value="product_position">Newest</option> -->
+             
               </select>
             </div>
             
@@ -835,9 +829,21 @@ export default {
         this.apiCall(this.moreData);
       }
     },
+ 
+     openNav() {
+       
+  document.getElementById("mySidenav").style.width = "100%";
+},
+
+ closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+    
   },
+
  
 };
+ 
 </script>
 <style lang="css">
 @import "~bootstrap/dist/css/bootstrap.css";

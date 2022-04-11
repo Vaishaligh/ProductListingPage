@@ -817,7 +817,21 @@ product-list-main .sidebar-main .components {
   text-transform: uppercase;
 }
 
+
+
 @media (max-width: 767px) {
+.sidebar{
+    position: fixed;
+    top: 0;
+    overflow: auto;
+    left: 0;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    padding: 0 0 46px;
+}
 
   .header {
     width: 100%;
