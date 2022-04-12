@@ -27,6 +27,9 @@
   margin: 0;
   padding: 0;
 }
+button:focus {
+  outline: none !important;
+}
 body {
   font-family: "jost-regular";
   margin: 0 auto;
@@ -243,7 +246,7 @@ img {
  
   display: inline-block;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 14px;
   
   font-family: "Jost, Medium";
   color: #303030;
@@ -322,16 +325,20 @@ img {
 
 .accordion-item {
   background-color: #fff;
-  border: none
+  border: none;
+  border-bottom: 1px solid hsla(0, 0%, 77.3%, 0.47059);
   
 }
 .accordion-button {
   font-weight: 600;
   font-size: 16px;
-  border-bottom: 1px solid hsla(0, 0%, 77.3%, 0.47059);
+  
   text-transform: uppercase;
   color: #303030;
-  
+  outline: none !important;
+}
+.accordion-button:focus{
+  border-color: none !important;
 }
 .accordion-button::after {
   flex-shrink: 0;
@@ -462,23 +469,25 @@ product-list-main .sidebar-main .components {
   line-height: 22.5px;
   padding: 15px;
 }
+
 .list-unstyled {
   max-height: 250px;
   overflow: auto;
-  padding: 0 0px 18px;
+  padding: 0 0 10px;
 }
 .list-unstyled a {
+ 
   color: #303030;
   font-family: "Jost, Medium";
   font-size: 16px;
-  display: flex;
-  padding: 15px 15px 0 22px;
+  display: inline-block;
+  padding: 0 0 0 18px;
   text-decoration: none;
   align-items: center;
 }
 
 .checkbox{
-  margin-right: 4px;
+  margin-right: 6px;
 }
 .home-page .footerLogo {
   background-color: #fbf7e8;
@@ -779,11 +788,14 @@ product-list-main .sidebar-main .components {
   color: white;
 }
 
+
 .next {
   border: 1px solid #ccc;
 }
 
+
 .page-count {
+  
   position: absolute;
   color: #0C0C0C;
   font-size: 16px;
