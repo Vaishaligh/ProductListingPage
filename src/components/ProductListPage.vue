@@ -237,13 +237,13 @@
         <div class="col-md-12 product-cntr">
           <div class="item">
             <h1>Women Pashima shawls</h1>
-            <p class="product-item">{{ products.length }} items</p>
+            <p class="product-item">{{ count }} items</p>
           </div>
         </div>
       </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0 for-dekhtop-view">
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-6 col-sm-6 p-0">
             <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
               <h3 v-on:click="toggleButton()">
                 <p class="hideFilterWrap" >
@@ -254,11 +254,13 @@
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="product-sort">
+            
               <select
                 class="sortnew"
-                v-model="selectedSorting"
+                v-model="selected"
                 @change="sorting"
               >
+              <option selected>Sort By</option>
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
              
               </select>
@@ -280,9 +282,10 @@
             <div class="product-sort">
               <select
                 class="sortnew-m"
-                v-model="selectedSorting"
+                v-model="selected"
                 @change="sorting"
               >
+               <option :selected="true">Sort By</option>
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
              
               </select>
@@ -295,7 +298,7 @@
         <div class="row m-0">
            
           <div class="col-lg-2 col-md-4" v-if="!isFilterToggle">
-            <nav id="sidebar">
+            <nav id="sidebar" class="sidebar">
               <div class="accordion" id="filterAccordion">
                 <div
                   class="accordion-item"
@@ -747,7 +750,7 @@ export default {
   name: "ProductListPage",
   data() {
     return {
-      selectedSorting: {},
+      selected: "Sort By",
       products: [],
       filters: [],
       sort: [],
@@ -777,8 +780,9 @@ export default {
       let resp = await axios.get(
       `https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=${moreData.page}&count=${moreData.count}&sort_by=${moreData.sort_by}&sort_dir=${moreData.sort_dir}&filter=${moreData.filter}`
     );
-    console.warn("api data", resp.data.result.filters);
+    console.warn("api data", resp.data.result.count);
     if(resp.data.response.success_message === "success"){
+      this.count =resp.data.result.count;
     this.products = resp.data.result.products;
     if(this.filters.length === 0){
       this.filters = resp.data.result.filters;
@@ -802,8 +806,8 @@ export default {
       this.detailVisible = !this.detailVisible
     },
     sorting() {
-      this.moreData.sort_by = this.selectedSorting.code;
-      this.moreData.sort_dir = this.selectedSorting.sortBy;
+      this.moreData.sort_by = this.selected.code;
+      this.moreData.sort_dir = this.selected.sortBy;
       this.apiCall(this.moreData)
     },
   
