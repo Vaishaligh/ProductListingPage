@@ -260,7 +260,7 @@
                 v-model="selected"
                 @change="sorting"
               >
-              <option selected>Sort By</option>
+              <option selected>SORT BY</option>
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
              
               </select>
@@ -285,7 +285,7 @@
                 v-model="selected"
                 @change="sorting"
               >
-               <option :selected="true">Sort By</option>
+               <option :selected="true">SORT BY</option>
                 <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
              
               </select>
@@ -307,7 +307,7 @@
                 >
                   <h2 class="accordion-header">
                     <button
-                      class="accordion-button collapsed"
+                      class="accordion-button collapsed noselect"
                       type="button"
                       data-bs-toggle="collapse"
                       :data-bs-target="'#' + filter.id"
@@ -331,7 +331,7 @@
                       v-for="option in filter.options"
                       :key="option.value_key"
                     >
-                      <a href="#"
+                      <label
                         ><input
                           type="checkbox"
                           class="checkbox"
@@ -344,7 +344,7 @@
                     
                         /><span 
                           >{{ option.value }} ({{ option.total }})</span
-                        ></a
+                        ></label
                       >
                     </li>
                   </div>
@@ -747,7 +747,7 @@ export default {
   name: "ProductListPage",
   data() {
     return {
-      selected: "Sort By",
+      selected: "SORT BY",
       products: [],
       filters: [],
       sort: [],
@@ -814,9 +814,7 @@ export default {
   
     filterProduct(checkbox, filter, heading) {
       console.log(heading)
-      if(heading === 'Price'){
-          filter.value = filter.value.replaceAll(' ', '+')
-        }
+      
       if (checkbox.target.checked) {
         var comaSeparate = ""
         if(this.moreData.filter !== ""){

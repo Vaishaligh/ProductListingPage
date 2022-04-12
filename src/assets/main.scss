@@ -337,8 +337,10 @@ img {
   color: #303030;
   outline: none !important;
 }
+
 .accordion-button:focus{
-  border-color: none !important;
+  border: 0;
+  box-shadow: none;
 }
 .accordion-button::after {
   flex-shrink: 0;
@@ -475,7 +477,7 @@ product-list-main .sidebar-main .components {
   overflow: auto;
   padding: 0 0 10px;
 }
-.list-unstyled a {
+.list-unstyled label {
  
   color: #303030;
   font-family: "Jost, Medium";
