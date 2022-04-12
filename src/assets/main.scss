@@ -487,9 +487,30 @@ product-list-main .sidebar-main .components {
   text-decoration: none;
   align-items: center;
 }
+.list-unstyled label span:before {
+  content: "";
+  float: left;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c3c2c9;
+  background: #fff;
+  border-radius: 2px;
+}
+.list-unstyled label .checkbox:checked + span:before {
+  background-color: #982127;
+  background-image: url(http://localhost:8080/img/white-check.e305295d.svg);
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 
 .checkbox{
+  opacity: 0;
   margin-right: 6px;
+  width: 0;
+  height: 0;
 }
 .home-page .footerLogo {
   background-color: #fbf7e8;
