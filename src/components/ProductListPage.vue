@@ -342,7 +342,7 @@
                         filter.filter_lable
                       )"
                     
-                        /><span
+                        /><span 
                           >{{ option.value }} ({{ option.total }})</span
                         ></a
                       >
@@ -370,7 +370,7 @@
                       <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">
-                          Rs.{{ product.selling_price }} {{ product.discount }}%
+                         <s >Rs.{{ product.price }}</s>   Rs.{{ product.selling_price }} <span style="color:red">{{ product.discount }}%</span>
                         </p>
 
                         <p class="card-text" style="color: green">
@@ -400,8 +400,9 @@
                       /><a class="wishlist"><img src="../assets/wish.png" /></a>
                       <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
+                       
                         <p class="card-text">
-                          Rs.{{ product.selling_price }} {{ product.discount }}%
+                    <s >Rs.{{ product.price }}</s>   Rs.{{ product.selling_price }} <span style="color:red">{{ product.discount }}%</span>
                         </p>
 
                         <p class="card-text" style="color: green">
