@@ -424,12 +424,8 @@
   <div class="container-fluid">
     <span class="page-count">Page 1 to 6</span>
     <ul class="pagination">
-      <li class="page-item"><a class="page-1" aria-label="1">1</a></li>
-      <li class="page-item"><a class="" aria-label="2">2</a></li>
-      <li class="page-item"><a class="" aria-label="3">3</a></li>
-      <li class="page-item"><a class="" aria-label="4">4</a></li>
-      <li class="page-item"><a class="" aria-label="5">5</a></li>
-      <li class="page-item"><a class="" aria-label="6">6</a></li>
+      <li class="page-item" v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
+   
       <li class="page-item next">
         <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
       </li>
@@ -776,6 +772,10 @@ export default {
     this.apiCall(this.moreData)
   },
   methods: {
+    pageChange(index){
+      this.moreData.page=index;
+      this.apiCall(this.moreData);
+    },
     async apiCall(moreData){
       let resp = await axios.get(
       `https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=${moreData.page}&count=${moreData.count}&sort_by=${moreData.sort_by}&sort_dir=${moreData.sort_dir}&filter=${moreData.filter}`
