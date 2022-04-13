@@ -798,12 +798,18 @@ product-list-main .sidebar-main .components {
 }
 
 .pagination li {
-  color: #0C0C0C;
+
   font-size: 16px;
   font-family: "jost-regular";
   float: left;
   padding: 4px 18px;
   text-decoration: none;
+}
+.active {
+  background: #8f5656;
+  color: white;
+  padding: 3px 16px;
+
 }
 .pagination li:hover {
   background: #8f5656;

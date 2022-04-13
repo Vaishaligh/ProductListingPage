@@ -423,9 +423,9 @@
   <!--section end -->
   <!--pagination start -->
   <div class="container-fluid">
-    <span class="page-count">Page 1 to 6</span>
+    <span class="page-count">Page {{pageNumber}} to 6</span>
     <ul class="pagination">
-      <li class="page-item" v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
+      <li class="page-item" :class="pageNumber==page? 'active' : '' " v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
    
       <li class="page-item next">
         <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
@@ -760,6 +760,7 @@ export default {
       isFooter4:true,
       isHidden: false,
       error_message: '',
+      pageNumber:1,
        moreData: {
         page: 1,
         count: 20,
@@ -774,6 +775,7 @@ export default {
   },
   methods: {
     pageChange(index){
+      this.pageNumber= index;
       this.moreData.page=index;
       this.apiCall(this.moreData);
     },
