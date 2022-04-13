@@ -231,7 +231,9 @@
 
   <!--header end -->
   <!--section start -->
-  <div id="container">
+ 
+  <div  id="container">
+  
     <div class="container-fluid product-list-main">
       <div class="container-fluid d-inline-block">
         <div class="col-md-12 product-cntr">
@@ -241,6 +243,7 @@
           </div>
         </div>
       </div>
+        <div v-if="loading" style="text-align:center"><img class="loader" src="../assets/load.png"/></div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0 for-dekhtop-view">
           <div class="col-lg-6 col-sm-6 p-0">
@@ -294,7 +297,8 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid d-inline-block p-0">
+      
+      <div  class="container-fluid d-inline-block p-0">
         <div class="row m-0">
            
           <div class="col-lg-2 col-md-4" v-if="!isFilterToggle">
@@ -747,6 +751,7 @@ export default {
   name: "ProductListPage",
   data() {
     return {
+      loading: false,
       selected: "SORT BY",
       products: [],
       filters: [],
@@ -771,6 +776,7 @@ export default {
     };
   },
   async mounted() {
+    
     this.apiCall(this.moreData)
   },
   methods: {
@@ -780,6 +786,7 @@ export default {
       this.apiCall(this.moreData);
     },
     async apiCall(moreData){
+      this.loading = true;
       let resp = await axios.get(
       `https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=${moreData.page}&count=${moreData.count}&sort_by=${moreData.sort_by}&sort_dir=${moreData.sort_dir}&filter=${moreData.filter}`
     );
@@ -804,6 +811,7 @@ export default {
       this.products = [];
       this.error_message = resp.data.response.error_message;
     }
+    this.loading = false;
     },
     toggleButton(){
       this.detailVisible = !this.detailVisible
