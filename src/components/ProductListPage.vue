@@ -429,7 +429,7 @@
   <div class="container-fluid">
     <span class="page-count">Page {{pageNumber}} to 6</span>
     <ul class="pagination">
-      <li class="page-item" :class="pageNumber==page? 'active' : '' " v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
+      <li class="page-item" :class="pageNumber==page? 'active-p' : '' " v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
    
       <li class="page-item next">
         <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
