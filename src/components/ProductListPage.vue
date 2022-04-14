@@ -788,8 +788,15 @@ export default {
     async apiCall(moreData){
       this.loading = true;
       let resp = await axios.get(
-      `https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas&page=${moreData.page}&count=${moreData.count}&sort_by=${moreData.sort_by}&sort_dir=${moreData.sort_dir}&filter=${moreData.filter}`
-    );
+      'https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas', {
+        params: {
+          page: `${moreData.page}`,
+          count: `${moreData.count}`,
+          sort_by: `${moreData.sort_by}`,
+          sort_dir: `${moreData.sort_dir}`,
+          filter: `${moreData.filter}`,
+        },
+      });
     console.warn("api data", resp.data.result.count);
     if(resp.data.response.success_message === "success"){
       this.count =resp.data.result.count;
@@ -823,17 +830,22 @@ export default {
     },
   
     filterProduct(checkbox, filter, heading) {
-      console.log(heading)
-      
+      console.log(heading);
+      var newArr = JSON.parse(JSON.stringify(filter))  ;
+       if(heading === 'Price' || heading === 'Category'){
+          newArr.value = newArr.value.replaceAll(' ', '+')
+        }
       if (checkbox.target.checked) {
         var comaSeparate = ""
         if(this.moreData.filter !== ""){
            comaSeparate = ","
-        }        
-        this.moreData.filter = `${this.moreData.filter}${comaSeparate}${filter.code}-${filter.value}`
+        }   
+        console.log("New filter", filter.value);     
+        this.moreData.filter = `${this.moreData.filter}${comaSeparate}${newArr.code}-${newArr.value}`
+        console.log(this.moreData.filter);
         this.apiCall(this.moreData);
       }else {
-        this.moreData.filter = this.moreData.filter.replaceAll(filter.code+'-'+filter.value, '');
+        this.moreData.filter = this.moreData.filter.replaceAll(newArr.code+'-'+newArr.value, '');
         const last = this.moreData.filter.charAt(this.moreData.filter.length - 1);
         const first = this.moreData.filter.charAt(0);
         if(last === ',' || first === ','){
