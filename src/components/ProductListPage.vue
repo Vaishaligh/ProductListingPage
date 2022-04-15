@@ -32,7 +32,11 @@
         >
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div id="mySidenav" class="collapse navbar-collapse active" :class="isHidden ? 'active' : '' ">
+        <div
+          id="mySidenav"
+          class="collapse navbar-collapse active"
+          :class="isHidden ? 'active' : ''"
+        >
           <div class="mobile-menu-container">
             <div class="mobile-heading">
               <h2>
@@ -46,10 +50,7 @@
               </div>
               <ul id="login-hide" class="navbar-nav mobile-top-nav">
                 <li class="nav-item dropdown">
-                  <a style="width: 100%"
-                    >Login
-                   
-                  </a>
+                  <a style="width: 100%">Login </a>
                 </li>
               </ul>
             </div>
@@ -57,18 +58,14 @@
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Women</a>
                 <div class="dropdown-menu dropdown-main"></div>
-               
-                
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Men</a>
                 <div class="dropdown-menu dropdown-main"></div>
-            
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Decor</a>
                 <div class="dropdown-menu dropdown-main"></div>
-              
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle"
@@ -79,7 +76,6 @@
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Our Story</a>
                 <div class="dropdown-menu dropdown-main"></div>
-               
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link font-bold dropdown_toggle">Craftmanship</a>
@@ -87,7 +83,7 @@
             </ul>
           </div>
         </div>
-      </div> 
+      </div>
 
       <div class="top-logo-m">
         <a
@@ -230,10 +226,9 @@
   </div>
 
   <!--header end -->
-  <!--section start -->
- 
-  <div  id="container">
-  
+  <!-- product section start -->
+
+  <div id="container">
     <div class="container-fluid product-list-main">
       <div class="container-fluid d-inline-block">
         <div class="col-md-12 product-cntr">
@@ -243,64 +238,86 @@
           </div>
         </div>
       </div>
-        <div v-if="loading" style="text-align:center"><img class="loader" src="../assets/load.png"/></div>
+      <div v-if="loading" style="text-align: center">
+        <img class="loader" src="../assets/load.png" />
+      </div>
       <div class="container-fluid d-inline-block p-0">
         <div class="row m-0 for-dekhtop-view">
-          <div class="col-lg-6 col-sm-6 p-0">
-            <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
+          <div class="col-lg-2 col-sm-6 p-0">
+            <div
+              class="sidebar-header"
+              v-on:click="isFilterToggle = !isFilterToggle"
+            >
               <h3 v-on:click="toggleButton()">
-                <p class="hideFilterWrap" >
-                  <img src="../assets/filter-icon.svg" />{{detailVisible ? "Hide Filter" : "Show Filter"}}
+                <p class="hideFilterWrap">
+                  <img src="../assets/filter-icon.svg" />{{
+                    detailVisible ? "Hide Filter" : "Show Filter"
+                  }}
                 </p>
               </h3>
             </div>
           </div>
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-8">
+            <div class="applied-filter">
+              <ul class="m-0 p-0">
+                <li>
+                  <span>Women</span>
+                  <a href="javascript:void(0)" class="remove">
+                    <i class="fa fa-close"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-6">
             <div class="product-sort">
-            
-              <select
-                class="sortnew"
-                v-model="selected"
-                @change="sorting"
-              >
-              <option selected>SORT BY</option>
-                <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
-             
+              <select class="sortnew" v-model="selected" @change="sorting">
+                <option selected>SORT BY</option>
+                <option
+                  v-for="sorting in sort"
+                  :key="sorting.id"
+                  :value="sorting"
+                >
+                  {{ sorting.label }}
+                </option>
               </select>
             </div>
-            
           </div>
         </div>
-            <div class="row m-0 sortFilter for-mobile-view">
+        <div class="row m-0 sortFilter for-mobile-view">
           <div class="col-lg-6 col-sm-6">
-            <div class="sidebar-header"  v-on:click="isFilterToggle = !isFilterToggle">
+            <div
+              class="sidebar-header"
+              v-on:click="isFilterToggle = !isFilterToggle"
+            >
               <h3 v-on:click="toggleButton()">
-                <p class="hideFilterWrap" >
-                  <img src="../assets/filter-icon.svg" />{{detailVisible ? "Hide Filter" : "Show Filter"}}
+                <p class="hideFilterWrap">
+                  <img src="../assets/filter-icon.svg" />{{
+                    detailVisible ? "Hide Filter" : "Show Filter"
+                  }}
                 </p>
               </h3>
             </div>
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="product-sort">
-              <select
-                class="sortnew-m"
-                v-model="selected"
-                @change="sorting"
-              >
-               <option :selected="true">SORT BY</option>
-                <option v-for="sorting in sort" :key="sorting.id" :value="sorting">{{sorting.label}}</option>
-             
+              <select class="sortnew-m" v-model="selected" @change="sorting">
+                <option :selected="true">SORT BY</option>
+                <option
+                  v-for="sorting in sort"
+                  :key="sorting.id"
+                  :value="sorting"
+                >
+                  {{ sorting.label }}
+                </option>
               </select>
             </div>
-            
           </div>
         </div>
       </div>
-      
-      <div  class="container-fluid d-inline-block p-0">
+
+      <div class="container-fluid d-inline-block p-0">
         <div class="row m-0">
-           
           <div class="col-lg-2 col-md-4" v-if="!isFilterToggle">
             <nav id="sidebar" class="sidebar">
               <div class="accordion" id="filterAccordion">
@@ -339,14 +356,10 @@
                         ><input
                           type="checkbox"
                           class="checkbox"
-                           @change="
-                        filterProduct(
-                        $event,
-                        option,
-                        filter.filter_lable
-                      )"
-                    
-                        /><span 
+                          @change="
+                            filterProduct($event, option, filter.filter_lable)
+                          "
+                        /><span
                           >{{ option.value }} ({{ option.total }})</span
                         ></label
                       >
@@ -374,7 +387,12 @@
                       <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">
-                         <s >Rs.{{ product.price }}</s>   Rs.{{ product.selling_price }} <span style="color:red">{{ product.discount }}%</span>
+                          <s>Rs.{{ product.price }}</s> Rs.{{
+                            product.selling_price
+                          }}
+                          <span style="color: red"
+                            >{{ product.discount }}%</span
+                          >
                         </p>
 
                         <p class="card-text" style="color: green">
@@ -387,7 +405,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12" v-if="isFilterToggle == true" >
+          <div class="col-lg-12 col-md-12" v-if="isFilterToggle == true">
             <div class="col-md-12 product-list">
               <div class="container-fluid d-inline-block p-0">
                 <div class="row">
@@ -404,9 +422,14 @@
                       /><a class="wishlist"><img src="../assets/wish.png" /></a>
                       <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
-                       
+
                         <p class="card-text">
-                    <s >Rs.{{ product.price }}</s>   Rs.{{ product.selling_price }} <span style="color:red">{{ product.discount }}%</span>
+                          <s>Rs.{{ product.price }}</s> Rs.{{
+                            product.selling_price
+                          }}
+                          <span style="color: red"
+                            >{{ product.discount }}%</span
+                          >
                         </p>
 
                         <p class="card-text" style="color: green">
@@ -419,18 +442,26 @@
               </div>
             </div>
           </div>
-         <div class="product_error">{{error_message}}</div>
+          <div class="product_error">{{ error_message }}</div>
         </div>
       </div>
     </div>
   </div>
-  <!--section end -->
+  <!-- product section end -->
   <!--pagination start -->
   <div class="container-fluid">
-    <span class="page-count">Page {{pageNumber}} to 6</span>
+    <span class="page-count">Page {{ pageNumber }} to 6</span>
     <ul class="pagination">
-      <li class="page-item" :class="pageNumber==page? 'active-p' : '' " v-for="page in 7" @click="pageChange(page)" :key="page"><a class="page-1" :aria-label="page" >{{page}}</a></li>
-   
+      <li
+        class="page-item"
+        :class="pageNumber == page ? 'active-p' : ''"
+        v-for="page in 7"
+        @click="pageChange(page)"
+        :key="page"
+      >
+        <a class="page-1" :aria-label="page">{{ page }}</a>
+      </li>
+
       <li class="page-item next">
         <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
       </li>
@@ -531,7 +562,7 @@
               </ul>
             </div>
             <div class="for-dekhtop-view">
-             <ul>
+              <ul>
                 <li class="men">
                   <a href="#">Men</a>
                 </li>
@@ -598,7 +629,9 @@
             </div>
           </div>
           <div class="customer_menu link_column home-links">
-            <h2 class="" v-on:click="isFooter3 = !isFooter3">CUSTOMER SERVICE</h2>
+            <h2 class="" v-on:click="isFooter3 = !isFooter3">
+              CUSTOMER SERVICE
+            </h2>
             <div class="for-mobile-view" v-if="!isFooter3">
               <ul>
                 <li class="men">
@@ -618,7 +651,7 @@
                 </li>
               </ul>
             </div>
-               <div class="for-dekhtop-view">
+            <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
                   <a href="#">Terms and Condition </a>
@@ -659,7 +692,7 @@
                 </li>
               </ul>
             </div>
-             <div class="for-dekhtop-view">
+            <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
                   <a href="#">My Account </a>
@@ -758,117 +791,126 @@ export default {
       sort: [],
       isFilter: false,
       isOptionFilter: true,
-      isFilterToggle:true,
-      isFooter1:true,
-      isFooter2:true,
-      isFooter3:true,
-      isFooter4:true,
+      isFilterToggle: true,
+      isFooter1: true,
+      isFooter2: true,
+      isFooter3: true,
+      isFooter4: true,
       isHidden: false,
-      error_message: '',
-      pageNumber:1,
-       moreData: {
+      error_message: "",
+      pageNumber: 1,
+      moreData: {
         page: 1,
         count: 20,
         sort_by: "",
         sort_dir: "desc",
-        filter: ""
+        filter: "",
       },
     };
   },
   async mounted() {
-    
-    this.apiCall(this.moreData)
+    this.apiCall(this.moreData);
   },
   methods: {
-    pageChange(index){
-      this.pageNumber= index;
-      this.moreData.page=index;
+    pageChange(index) {
+      this.pageNumber = index;
+      this.moreData.page = index;
       this.apiCall(this.moreData);
     },
-    async apiCall(moreData){
+    async apiCall(moreData) {
       this.loading = true;
       let resp = await axios.get(
-      'https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas', {
-        params: {
-          page: `${moreData.page}`,
-          count: `${moreData.count}`,
-          sort_by: `${moreData.sort_by}`,
-          sort_dir: `${moreData.sort_dir}`,
-          filter: `${moreData.filter}`,
-        },
-      });
-    console.warn("api data", resp.data.result.count);
-    if(resp.data.response.success_message === "success"){
-      this.count =resp.data.result.count;
-    this.products = resp.data.result.products;
-    if(this.filters.length === 0){
-      this.filters = resp.data.result.filters;
-      this.sort = resp.data.result.sort;
-      this.sort.forEach(element => {
-        if(element.label === 'Price'){
-          element.label = 'Price(Low to High)';
-          element.sortBy = 'asc'
-        } else {
-          element.sortBy = 'desc';
+        "https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas",
+        {
+          params: {
+            page: `${moreData.page}`,
+            count: `${moreData.count}`,
+            sort_by: `${moreData.sort_by}`,
+            sort_dir: `${moreData.sort_dir}`,
+            filter: `${moreData.filter}`,
+          },
         }
-      });
-      this.sort.push({ code: 'selling_price', label: 'Price(High to Low)', sortBy: 'desc'})
-    }
-    } else {
-      this.products = [];
-      this.error_message = resp.data.response.error_message;
-    }
-    this.loading = false;
+      );
+      console.warn("api data", resp.data.result.count);
+
+      if (resp.data.response.success_message === "success") {
+        this.count = resp.data.result.count;
+        this.products = resp.data.result.products;
+        if (this.filters.length === 0) {
+          this.filters = resp.data.result.filters;
+          this.sort = resp.data.result.sort;
+          this.sort.forEach((element) => {
+            if (element.label === "Price") {
+              element.label = "Price(Low to High)";
+              element.sortBy = "asc";
+            } else {
+              element.sortBy = "desc";
+            }
+          });
+          this.sort.push({
+            code: "selling_price",
+            label: "Price(High to Low)",
+            sortBy: "desc",
+          });
+        }
+      } else {
+        this.products = [];
+        this.error_message = resp.data.response.error_message;
+      }
+      this.loading = false;
     },
-    toggleButton(){
-      this.detailVisible = !this.detailVisible
+    toggleButton() {
+      this.detailVisible = !this.detailVisible;
     },
     sorting() {
       this.moreData.sort_by = this.selected.code;
       this.moreData.sort_dir = this.selected.sortBy;
-      this.apiCall(this.moreData)
+      this.apiCall(this.moreData);
     },
-  
+
     filterProduct(checkbox, filter, heading) {
       console.log(heading);
-      var newArr = JSON.parse(JSON.stringify(filter))  ;
-       if(heading === 'Price' || heading === 'Category'){
-          newArr.value = newArr.value.replaceAll(' ', '+')
-        }
+      var newArr = JSON.parse(JSON.stringify(filter));
+      if (heading === "Price" || heading === "Category") {
+        newArr.value = newArr.value.replaceAll(" ", "+");
+      }
       if (checkbox.target.checked) {
-        var comaSeparate = ""
-        if(this.moreData.filter !== ""){
-           comaSeparate = ","
-        }   
-        console.log("New filter", filter.value);     
-        this.moreData.filter = `${this.moreData.filter}${comaSeparate}${newArr.code}-${newArr.value}`
+        var comaSeparate = "";
+        if (this.moreData.filter !== "") {
+          comaSeparate = ",";
+        }
+        console.log("New filter", filter.value);
+        this.moreData.filter = `${this.moreData.filter}${comaSeparate}${newArr.code}-${newArr.value}`;
         console.log(this.moreData.filter);
         this.apiCall(this.moreData);
-      }else {
-        this.moreData.filter = this.moreData.filter.replaceAll(newArr.code+'-'+newArr.value, '');
-        const last = this.moreData.filter.charAt(this.moreData.filter.length - 1);
+      } else {
+        this.moreData.filter = this.moreData.filter.replaceAll(
+          newArr.code + "-" + newArr.value,
+          ""
+        );
+        const last = this.moreData.filter.charAt(
+          this.moreData.filter.length - 1
+        );
         const first = this.moreData.filter.charAt(0);
-        if(last === ',' || first === ','){
-          this.moreData.filter = last === ',' ?this.moreData.filter.slice(0, -1) : this.moreData.filter.slice(1, this.moreData.length)
+        if (last === "," || first === ",") {
+          this.moreData.filter =
+            last === ","
+              ? this.moreData.filter.slice(0, -1)
+              : this.moreData.filter.slice(1, this.moreData.length);
         }
         this.apiCall(this.moreData);
       }
     },
- 
-     openNav() {
-       
-  document.getElementById("mySidenav").style.width = "100%";
-},
 
- closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-    
+    openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    },
+
+    closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    },
   },
-
- 
 };
- 
 </script>
 <style lang="css">
 @import "~bootstrap/dist/css/bootstrap.css";
