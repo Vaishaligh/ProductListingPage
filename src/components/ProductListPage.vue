@@ -259,11 +259,11 @@
           </div>
           <div class="col-lg-8">
             <div class="applied-filter">
-              <ul class="m-0 p-0">
-                <li>
-                  <span>Women</span>
+              <ul class="m-0 p-0" >
+                <li v-for="data in selectedFilters" :key="data.label">
+                  <span>{{data.filt.value}}</span>
                   <a href="javascript:void(0)" class="remove">
-                    <i class="fa fa-close"></i>
+                    <i class="fa fa-close" @click="clearFilter(data.filt, data.label)"></i>
                   </a>
                 </li>
               </ul>
@@ -283,6 +283,18 @@
               </select>
             </div>
           </div>
+        </div>
+        <div class="row" v-if="selectedFilters.length > 0">
+            <div class="applied-filter">
+              <ul class="m-0 p-0" @click="clearAll">
+                <li>
+                  <span>Clear All</span>
+                  <a href="javascript:void(0)" class="remove">
+                    <i class="fa fa-close"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
         </div>
         <div class="row m-0 sortFilter for-mobile-view">
           <div class="col-lg-6 col-sm-6">
@@ -356,6 +368,7 @@
                         ><input
                           type="checkbox"
                           class="checkbox"
+                          :id="option.value_key"
                           @change="
                             filterProduct($event, option, filter.filter_lable)
                           "
@@ -798,6 +811,7 @@ export default {
       isFooter4: true,
       isHidden: false,
       error_message: "",
+      selectedFilters:[],
       pageNumber: 1,
       moreData: {
         page: 1,
@@ -812,10 +826,19 @@ export default {
     this.apiCall(this.moreData);
   },
   methods: {
+    removeFilter() {
+
+    },
     pageChange(index) {
       this.pageNumber = index;
       this.moreData.page = index;
       this.apiCall(this.moreData);
+    },
+    clearAll(){
+      this.filters = [];
+      this.moreData.filter = "";
+      this.selectedFilters = [];
+      this.apiCall(this.moreData)
     },
     async apiCall(moreData) {
       this.loading = true;
@@ -867,7 +890,16 @@ export default {
       this.moreData.sort_dir = this.selected.sortBy;
       this.apiCall(this.moreData);
     },
-
+    clearFilter(filter, heading){
+        var event = document.getElementById(filter.value_key);
+        event.checked = false;
+        var para = {
+          target: {
+            checked: event.checked
+          }
+        }
+        this.filterProduct(para, filter, heading)
+    },
     filterProduct(checkbox, filter, heading) {
       console.log(heading);
       var newArr = JSON.parse(JSON.stringify(filter));
@@ -883,7 +915,17 @@ export default {
         this.moreData.filter = `${this.moreData.filter}${comaSeparate}${newArr.code}-${newArr.value}`;
         console.log(this.moreData.filter);
         this.apiCall(this.moreData);
+        var tempfilter = {
+          label: heading,
+          filt: filter
+        }
+        this.selectedFilters.push(tempfilter);
       } else {
+         this.selectedFilters.map((ele, index) => {
+           if(ele.filt.value === filter.value){
+             this.selectedFilters.splice(index,1);
+           }
+         })
         this.moreData.filter = this.moreData.filter.replaceAll(
           newArr.code + "-" + newArr.value,
           ""
@@ -898,9 +940,10 @@ export default {
               ? this.moreData.filter.slice(0, -1)
               : this.moreData.filter.slice(1, this.moreData.length);
         }
-        this.apiCall(this.moreData);
+        this.apiCall(this.moreData);        
       }
     },
+
 
     openNav() {
       document.getElementById("mySidenav").style.width = "100%";
