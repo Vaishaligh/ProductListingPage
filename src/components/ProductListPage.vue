@@ -259,10 +259,10 @@
           </div>
           <div class="col-lg-8">
             <div class="applied-filter">
-              <ul class="m-0 p-0" >
+              <ul class="m-0 p-0" style="">
                 <li v-for="data in selectedFilters" :key="data.label">
                   <span>{{data.filt.value}}</span>
-                  <a href="javascript:void(0)" class="remove">
+                  <a href="#" class="remove">
                     <i class="fa fa-close" @click="clearFilter(data.filt, data.label)"></i>
                   </a>
                 </li>
@@ -287,9 +287,9 @@
         <div class="row" v-if="selectedFilters.length > 0">
             <div class="applied-filter">
               <ul class="m-0 p-0" @click="clearAll">
-                <li>
+                <li style="margin-left: 20px;">
                   <span>Clear All</span>
-                  <a href="javascript:void(0)" class="remove">
+                  <a href="#" class="remove">
                     <i class="fa fa-close"></i>
                   </a>
                 </li>
@@ -463,20 +463,20 @@
   <!-- product section end -->
   <!--pagination start -->
   <div class="container-fluid">
-    <span class="page-count">Page {{ pageNumber }} to 6</span>
+    <span class="page-count">Page {{ pageNumber }} to {{Math.ceil(count/20)}}</span>
     <ul class="pagination">
       <li
         class="page-item"
         :class="pageNumber == page ? 'active-p' : ''"
-        v-for="page in 7"
+        v-for="page in getNumbers(pageNumber,pageNumber+6)"
         @click="pageChange(page)"
         :key="page"
       >
         <a class="page-1" :aria-label="page">{{ page }}</a>
       </li>
-
-      <li class="page-item next">
-        <a class="" aria-label="Next">Next<span>&nbsp;></span></a>
+    <li class="">....</li>
+      <li class="page-item">
+        <a class="" aria-label="Next">{{Math.ceil(count/20)}}</a>
       </li>
     </ul>
   </div>
@@ -825,7 +825,10 @@ export default {
   async mounted() {
     this.apiCall(this.moreData);
   },
-  methods: {
+  methods: {    
+        getNumbers:function(start,stop){
+            return new Array(stop-start).fill(start).map((n,i)=>n+i);
+        },
     removeFilter() {
 
     },
@@ -841,6 +844,7 @@ export default {
       this.apiCall(this.moreData)
     },
     async apiCall(moreData) {
+     
       this.loading = true;
       let resp = await axios.get(
         "https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas",
