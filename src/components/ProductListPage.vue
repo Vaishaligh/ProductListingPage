@@ -843,8 +843,17 @@ export default {
       this.selectedFilters = [];
       this.apiCall(this.moreData)
     },
+
     async apiCall(moreData) {
-     
+     this.$router.push({
+           query: {
+            ...(moreData.page && {page: `${moreData.page}`}),
+            ...(moreData.count && {count: `${moreData.count}`}),
+            ...(moreData.sort_by && {sort_by: `${moreData.sort_by}`}),
+            ...(moreData.sort_dir && {sort_dir: `${moreData.sort_dir}`}),
+            ...(moreData.filter && {filter: `${moreData.filter}`}),
+          },
+      })
       this.loading = true;
       let resp = await axios.get(
         "https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas",
