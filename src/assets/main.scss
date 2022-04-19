@@ -906,7 +906,42 @@ product-list-main .sidebar-main .components {
   transition: transform 0.2s ease-in-out;
   float: right;
 }
+.product-detailmain .breadcrumb {
+    padding-top: 20px;
+}
 
+
+.breadcrumb {
+    display: flex;
+    border-radius: inherit;
+    padding: 10px 25px;
+    
+    margin: 0;
+}
+.product-detail-container {
+  padding: 2.7rem 20px;
+  padding-top: 0!important;
+  min-height: 50vh;
+}
+.product-detail-container .image-box {
+  overflow: hidden;
+  width: calc(50% - 10px);
+  margin: 5px;
+  float: left;
+}
+.product-detail-container .image-box img {
+  cursor: zoom-in;
+  transition: all .5s;
+}
+.product-detail-container .page-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1;
+  font-family: "Neue Helvetica, Roman";
+  padding: 10px 20px 15px 0;
+  font-size: 16px;
+  color: #262626;
+}
 @media (max-width: 767px) {
   .sidebar {
     position: fixed;

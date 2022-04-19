@@ -424,13 +424,13 @@
                   >
                     <div class="slide-box">
                        <div class="product-box">
-                      <a :href="product.image" class="view-detail"> View Detail </a>
-                      <a :href="product.image">
+                      <a class="view-detail"  @click="viewDetail()">  View Detail </a>
+                     
                       <img
                         class="card-img-top"
                         :src="product.image"
                         alt="Card image cap"
-                      /></a>
+                      />
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
@@ -461,13 +461,13 @@
                   >
                     <div class="slide-box">
                        <div class="product-box">
-                      <a :href="product.image" class="view-detail"> View Detail </a>
-                      <a :href="product.image">
+                      <a class="view-detail" @click="viewDetail(product.url_key)"> View Detail </a>
+                    
                       <img
                         class="card-img-top"
                         :src="product.image"
-                        alt="Card image cap"
-                      /></a>
+                        alt="Card image cap"/>
+                     
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
@@ -904,7 +904,7 @@ export default {
           },
         }
       );
-      console.warn("api data", resp.data.result.count);
+      console.warn("api data", resp.data.result.products);
 
       if (resp.data.response.success_message === "success") {
         this.count = resp.data.result.count;
@@ -993,7 +993,10 @@ export default {
         this.apiCall(this.moreData);        
       }
     },
-
+  viewDetail(key) {
+  this.$router.push('/productdetailpage');
+  this.$router.push({ path: '/productdetailpage', query: { url_key: key } });
+  },
 
     openNav() {
       document.getElementById("mySidenav").style.width = "100%";
