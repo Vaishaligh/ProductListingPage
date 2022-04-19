@@ -423,26 +423,27 @@
                     :key="product.id"
                   >
                     <div class="slide-box">
+                       <div class="product-box">
+                      <a :href="product.image" class="view-detail"> View Detail </a>
+                      <a :href="product.image">
                       <img
                         class="card-img-top"
                         :src="product.image"
                         alt="Card image cap"
-                      /><a class="wishlist"><img src="../assets/wish.png" /></a>
+                      /></a>
+                      <a class="wishlist"><img src="../assets/wish.png" /></a>
+                      </div>
                       <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-title"><a href="">{{ product.name }}</a></p>
                         <p class="card-text">
-                          <s>Rs.{{ product.price }}</s> Rs.{{
-                            product.selling_price
-                          }}
-                          <span style="color: red"
-                            >{{ product.discount }}%</span
-                          >
+                        <s>Rs.{{ product.price }}</s> Rs.{{product.selling_price }}
+                        <span style="color: red">{{ product.discount }}%</span>
                         </p>
-
-                        <p class="card-text" style="color: green">
+                         <p class="card-text" style="color: green">
                           {{ product.stock_status }}
                         </p>
                       </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -459,13 +460,18 @@
                     :key="product.id"
                   >
                     <div class="slide-box">
+                       <div class="product-box">
+                      <a :href="product.image" class="view-detail"> View Detail </a>
+                      <a :href="product.image">
                       <img
                         class="card-img-top"
                         :src="product.image"
                         alt="Card image cap"
-                      /><a class="wishlist"><img src="../assets/wish.png" /></a>
+                      /></a>
+                      <a class="wishlist"><img src="../assets/wish.png" /></a>
+                      </div>
                       <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-title"><a href="">{{ product.name }}</a></p>
 
                         <p class="card-text">
                           <s>Rs.{{ product.price }}</s> Rs.{{

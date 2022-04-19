@@ -1,9 +1,11 @@
 import {createApp} from 'vue';
 import App from './App.vue'
 import ProductListPage from './components/ProductListPage.vue';
+import ProductDetailPage from './components/ProductDetailPage.vue';
 import {createRouter ,createWebHashHistory} from 'vue-router';
 const routes = [
     { path: '/', component: ProductListPage },
+    { path: '/productdetailpage', component: ProductDetailPage },
   ]
   
 
