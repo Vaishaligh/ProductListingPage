@@ -380,7 +380,38 @@
                   </div>
                 </div>
               </div>
+             <div class="row m-0 sortFilter for-mobile-view">
+          <div class="col-lg-6 col-sm-6">
+            <div
+              class="sidebar-header"
+              v-on:click="isFilterToggle = !isFilterToggle"
+            >
+              <h3 v-on:click="toggleButton()">
+                <p class="hideFilterWrap">
+                  <img src="../assets/filter-icon.svg" />{{
+                    detailVisible ? "Hide Filter" : "Show Filter"
+                  }}
+                </p>
+              </h3>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="product-sort">
+              <select class="sortnew-m" v-model="selected" @change="sorting">
+                <option :selected="true">SORT BY</option>
+                <option
+                  v-for="sorting in sort"
+                  :key="sorting.id"
+                  :value="sorting"
+                >
+                  {{ sorting.label }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
             </nav>
+            
           </div>
           <div class="col-lg-10 col-md-8" v-if="isFilterToggle == false">
             <div class="col-md-12 product-list">
