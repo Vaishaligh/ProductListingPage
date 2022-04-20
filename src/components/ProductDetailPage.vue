@@ -231,25 +231,132 @@
   <div id="container">
     <div class="product-detailmain">
       <nav class="detail-page-breadcrumb">
-        <ol class="breadcrumb"></ol>
+        <ol class="breadcrumb">
+          <li style="padding-left: 20px;"> <router-link to="/"  >Home</router-link> </li>
+          <li style="padding-left: 8px;"><img src="../assets/path.svg" alt="" /></li>
+          <li style="padding-left: 8px;">{{ productName }}</li>
+        </ol>
       </nav>
     </div>
     <div class="container-fluid product-detail-container">
       <div class="row">
-        <div
-          class="col-md-7 col-sm-12"
-          style="padding: 0px"
-         
-        >
-          <div class="image-box"
+        <div class="col-md-8 col-sm-12">
+          <div
+            class="image-box"
             v-for="productImage in productImages"
-          :key="productImage.id"
+            :key="productImage.id"
           >
             <img class="card-img-top" :src="productImage.image" alt="" />
           </div>
         </div>
-        <div class="col-md-5 col-sm-12">
-            <h1 class="page-title">{{ productName }}</h1>
+        <div class="col-md-4 col-sm-12">
+          <h1 class="page-title">{{ productName }}</h1>
+          <ul class="page-star">
+            <li><img src="../assets/Star.svg" alt="" /></li>
+            <li><img src="../assets/Star.svg" alt="" /></li>
+            <li><img src="../assets/Star.svg" alt="" /></li>
+            <li><img src="../assets/Star.svg" alt="" /></li>
+            <li><img src="../assets/Star.svg" alt="" /></li>
+          </ul>
+          <div class="price">
+            <p>
+              <span class="selling-price"
+                ><img src="../assets/Rupees.svg" alt="" style="margin-top:-6px; margin-right: 3px" />{{
+                  productSellingPrice
+                }}</span
+              >
+              <span class="discount">{{ productDiscount }}% Off</span>
+            </p>
+            <p class="mrp-message">
+              MRP:<s style="    margin-left: 5px;"
+                ><img src="../assets/Rupees.svg" alt="" style="height:11px" />{{ productPrice }}</s
+              >(inclusive all of taxes)
+            </p>
+          </div>
+          <div class="short">
+            <p style="border-bottom: 1px solid #ccc; padding-bottom:20px">
+            <span
+              >VIP Club Member get an extra discount of Rs.60 and Free Shipping.
+              Learn More</span></p
+            >
+          </div>
+          <div class="color">
+            <span>Color : {{ productColor }}</span>
+          </div>
+          <div class="size-container">
+            <div class="size-bg">
+              <label for="">Select Size</label>
+              <div class="size-box">
+                <label
+                  class="size select-one-size"
+                  v-for="productSize in productSizes"
+                  :key="productSize.id"
+                  >{{ productSize.size }}</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="add-to-cart-container">
+            <div class="add-to-cart-btns fixed">
+              <button type="button" title="Add to cart" class="add-to-cart btn">
+                <i class=""></i>Add to cart
+              </button>
+
+              <i class="add-to-wish-btns"><img src="../assets/Heart.svg" /></i>
+            </div>
+          </div>
+          <div class="other-info">
+            <h3>Product Details</h3>
+            <div>
+              <ul>
+                <li v-for="productDetail in productDetails"
+                :key="productDetail.id">
+                  <span>{{productDetail.label}}</span>:
+                  <span>{{productDetail.value}}</span>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="other-info down-other-info">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3" style="text-align: center">
+      <h4 class="font-medium mb-4">Similar Products</h4>
+
+      <div class="row">
+        <div
+          class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
+          v-for="productSimilar in productSimilars"
+          :key="productSimilar.id"
+        >
+          <div class="slide-box">
+            <div class="product-box">
+              <a class="view-detail" @click="viewDetail(product.url_key)">
+                View Detail
+              </a>
+              <img
+                class="card-img-top"
+                :src="productSimilar.image"
+                alt="Card image cap"
+              />
+              <a class="wishlist"><img src="../assets/wish.png" /></a>
+            </div>
+            <div class="card-body">
+              <p class="card-title">
+                <a href="">{{ productSimilar.name }}</a>
+              </p>
+              <p class="card-text">
+                <s>Rs.{{ productSimilar.price }}</s> Rs.{{
+                  productSimilar.selling_price
+                }}
+                <span style="color: red">{{ productSimilar.discount }}%</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -570,16 +677,20 @@ export default {
   name: "ProductDetailPage",
   data() {
     return {
-         isFooter1: true,
+       isFilterToggle: true,
+      isFooter1: true,
       isFooter2: true,
       isFooter3: true,
       isFooter4: true,
+      isHidden: false,
       productImages: [],
+      productSimilars: [],
+      productSizes: [],
+      productDetails: [],
     };
   },
-  async mounted() { 
-    
-    console.log(this.$route.query.url_key)
+  async mounted() {
+    console.log(this.$route.query.url_key);
     this.getProductDetails(this.$route.query.url_key);
   },
   methods: {
@@ -587,12 +698,28 @@ export default {
       let response = await axios.get(
         `https://pim.wforwoman.com/pim/pimresponse.php/?service=product&store=1&url_key=${key}`
       );
-      console.warn("product detail api data", response.data.result);
+      console.warn("product detail api data", response.data.result.visible_attributes);
       this.productImages = response.data.result.gallery;
       this.productName = response.data.result.name;
-      console.log(this.productName)
+      this.productSellingPrice = response.data.result.selling_price;
+      this.productDiscount = response.data.result.discount;
+      this.productPrice = response.data.result.price;
+      this.productColor = response.data.result.color;
+      this.productSimilars = response.data.result.similar_products;
+      this.productSizes = response.data.result.new_size_chart.result;
+      this.productDetails = response.data.result.visible_attributes;
     },
-  },
+     openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    },
+
+    closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    },
+     toggleButton() {
+      this.detailVisible = !this.detailVisible;
+    },
+  }
 };
 </script>
 <style lang="css">

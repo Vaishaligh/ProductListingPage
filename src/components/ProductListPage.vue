@@ -424,7 +424,7 @@
                   >
                     <div class="slide-box">
                        <div class="product-box">
-                      <a class="view-detail"  @click="viewDetail()">  View Detail </a>
+                      <a class="view-detail" @click="viewDetail(product.url_key)"> View Detail </a>
                      
                       <img
                         class="card-img-top"
@@ -434,7 +434,7 @@
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
-                        <p class="card-title"><a href="">{{ product.name }}</a></p>
+                        <p class="card-title productname"><a @click="viewDetail(product.url_key)">{{ product.name }}</a></p>
                         <p class="card-text">
                         <s>Rs.{{ product.price }}</s> Rs.{{product.selling_price }}
                         <span style="color: red">{{ product.discount }}%</span>
@@ -471,7 +471,7 @@
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
-                        <p class="card-title"><a href="">{{ product.name }}</a></p>
+                        <p class="card-title productname"><a @click="viewDetail(product.url_key)">{{ product.name }}</a></p>
 
                         <p class="card-text">
                           <s>Rs.{{ product.price }}</s> Rs.{{

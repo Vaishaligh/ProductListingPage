@@ -705,7 +705,9 @@ product-list-main .sidebar-main .components {
   position: relative;
 }
 .slide-box:hover {
-  border: 1px solid #ededed;
+  .slide-box {
+    border: 1px solid transparent;
+}
 }
 .product-list .slide-box:hover .view-detail, .product-list .slide-box:hover .size {
   opacity: 1;
@@ -726,6 +728,7 @@ product-list-main .sidebar-main .components {
 .product-list .product-box .view-detail {
   background: #c11d14;
   z-index: 99;
+  cursor: pointer;
 }
 .product-box .view-detail {
   color: #fff;
@@ -799,6 +802,9 @@ product-list-main .sidebar-main .components {
   font-family: "Jost, Medium";
   font-size: 16px;
   color: #0c0c0c;
+}
+.productname{
+  cursor:pointer;
 }
 .card-text {
   font-family: "jost-regular";
@@ -909,17 +915,15 @@ product-list-main .sidebar-main .components {
 .product-detailmain .breadcrumb {
     padding-top: 20px;
 }
-
-
 .breadcrumb {
-    display: flex;
-    border-radius: inherit;
-    padding: 10px 25px;
-    
-    margin: 0;
+  background: transparent;
+  display: flex;
+  border-radius: inherit;
+  padding: 10px 25px;
+
 }
 .product-detail-container {
-  padding: 2.7rem 20px;
+ 
   padding-top: 0!important;
   min-height: 50vh;
 }
@@ -938,9 +942,181 @@ product-list-main .sidebar-main .components {
   margin-bottom: 5px;
   line-height: 1;
   font-family: "Neue Helvetica, Roman";
-  padding: 10px 20px 15px 0;
+  padding: 10px 20px 0px 20px;
   font-size: 16px;
   color: #262626;
+}
+.product-detail-container ul{
+  padding: 10px 20px
+}
+
+.product-detail-container ul li{
+  padding-left: 3px;
+  list-style: none;
+  float: left;
+}
+.price{
+  padding-left: 20px;
+ 
+}
+
+.short{
+  padding-left: 20px;
+  
+}
+.color{
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+.mrp-message {
+  font-size: 11px;
+  position: relative;
+  top: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.selling-price {
+  font-size: 20px;
+  color: #262626;
+}
+.discount{
+  color: red;
+  padding: 5px;
+  font-size: 20px
+  ;
+}
+.product-detail-container .size-container {
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+}
+
+.product-detail-container .size-container label {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 14px;
+}
+
+.size-bg {
+  padding-left: 20px;
+
+}
+.product-detail-container .size-container .size-box .size {
+  background: #fff;
+  padding: 4px 12px;
+  color: #000;
+  min-width: 40px;
+  display: inline-block;
+  outline: none;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.add-to-cart-container{
+ padding: 20px;
+
+}
+.add-to-cart-btns{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+
+}
+.add-to-cart-container .add-to-cart-btns .btn {
+  padding: 10px;
+  position: relative;
+  background: #000000;
+  color: #Fff;
+  margin-right: 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 62%;
+  max-width: 250px;
+}
+.add-to-wish-btns {
+  padding: 10px;
+  position: relative;
+
+  color: #Fff;
+  margin-right: 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-size: 15px;
+ 
+  max-width: 250px;
+}
+.product-detail-container .other-info {
+  padding-left: 20px;
+  margin-top: 15px;
+  float: left;
+  width: 90%;
+
+}
+.product-detail-container .other-info h3 {
+  font-size: 16px;
+  
+}
+.product-detail-container .other-info ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 12px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.product-detail-container .other-info ul li:nth-child(odd) {
+  margin-right: 10%;
+}
+
+.product-detail-container .other-info ul li {
+  list-style: none;
+  vertical-align: top;
+  line-height: 15px;
+  border-bottom: 1px solid #eaeaec;
+  margin: 0 0 8px;
+  padding: 0 0 7px;
+  width: 45%;
+}
+.product-detail-container .other-info ul li .label {
+  float: left;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  color: #7e818c;
+  position: relative;
+}
+
+.product-detail-container .other-info ul li span {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+.product-detail-container .other-info ul li .data {
+  width: 100%;
+  text-align: left;
+  color: #282c3f;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.product-detail-container .other-info ul li span {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.product-detail-container .other-info {
+    margin-top: 15px;
+    float: left;
+    width: 90%;
+}
+.down-other-info h2 {
+  background: #ccc;
 }
 @media (max-width: 767px) {
   .sidebar {
