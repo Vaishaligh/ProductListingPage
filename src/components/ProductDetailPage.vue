@@ -319,13 +319,13 @@
             </div>
           </div>
           <div class="other-info down-other-info">
-            
+           
           </div>
         </div>
       </div>
     </div>
-    <div class="container mt-3" style="text-align: center">
-      <h4 class="font-medium mb-4">Similar Products</h4>
+    <div class="container mt-3" >
+      <h4 class="font-medium mb-4" style="text-align: center">Similar Products</h4>
 
       <div class="row">
         <div
