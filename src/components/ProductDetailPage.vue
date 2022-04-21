@@ -240,14 +240,25 @@
     </div>
     <div class="container-fluid product-detail-container">
       <div class="row">
+        
         <div class="col-md-8 col-sm-12">
-          <div
+    <carousel :items-to-show="2" :snapAlign= "center">
+    <slide v-for="productImage in productImages" :key="productImage.id">
+     <div class="carousel__item"> <img class=" card-img-top" :src="productImage.image" alt="" /></div>
+    </slide>
+
+       <template #addons>
+      <Navigation />
+     
+    </template>
+  </carousel>
+          <!-- <div
             class="image-box"
             v-for="productImage in productImages"
             :key="productImage.id"
           >
             <img class="card-img-top" :src="productImage.image" alt="" />
-          </div>
+          </div> -->
         </div>
         <div class="col-md-4 col-sm-12">
           <h1 class="page-title">{{ productName }}</h1>
@@ -353,11 +364,14 @@
       <h4 class="font-medium mb-4" style="text-align: center">Similar Products</h4>
 
       <div class="row">
-        <div
+        <carousel :items-to-show="4" :snapAlign= "center">
+        <slide
           class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
           v-for="productSimilar in productSimilars"
           :key="productSimilar.id"
         >
+        
+        
           <div class="slide-box">
             <div class="product-box">
               <a class="view-detail" @click="viewDetail(product.url_key)">
@@ -382,7 +396,12 @@
               </p>
             </div>
           </div>
-        </div>
+        </slide>
+         <template #addons>
+      <Navigation />
+     
+    </template>
+        </carousel>
       </div>
     </div>
   </div>
@@ -698,9 +717,23 @@
 
 <script>
 import axios from "axios";
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation,} from 'vue3-carousel';
+import 'vue3-carousel/dist/carousel.css';
 export default {
   name: "ProductDetailPage",
+   components: {
+    Carousel,
+    Slide,
+    Navigation,
+ 
+  
+  },
+  
   data() {
+
+   
+  
     return {
        isFilterToggle: true,
       isFooter1: true,
@@ -712,8 +745,10 @@ export default {
       productSimilars: [],
       productSizes: [],
       productDetails: [],
+      
     };
   },
+  
   async mounted() {
     console.log(this.$route.query.url_key);
     this.getProductDetails(this.$route.query.url_key);
