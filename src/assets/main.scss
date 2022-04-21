@@ -1118,7 +1118,68 @@ product-list-main .sidebar-main .components {
 .down-other-info h2 {
   background: #ccc;
 }
+.location {
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  /* width: 82%; */
+  background-color: #d0cece;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 8px;
+}
+.location svg{
+    width: 23px;
+margin: -7px 5px;
+cursor: pointer;
+}
+.location span {
+  padding-left: 10px;
+  cursor: pointer;
+  /* float: right; */
+  /* margin-right: 20px; */
+  font-weight: 600;
+}
+.location input {
+border: none;
+background: #e8e8e8ed;
+padding: 6px;
+border-radius: 4px;
+}
+.location input:focus {
+outline: none;
+}
 @media (max-width: 767px) {
+  .location {
+    /* display: flex; */
+  justify-content: flex-start;
+  align-items: center;
+  /* width: 82%; */
+  background-color: #d0cece;
+  border-radius: 6px;
+  margin-top: 20px;
+  padding: 6px;
+}
+.location svg{
+      width: 23px;
+  margin: -7px 5px;
+  cursor: pointer;
+}
+.location span {
+    cursor: pointer;
+  float: right;
+  margin-right: 16px;
+  font-weight: 600;
+}
+.location input {
+border: none;
+background: #e8e8e8ed;
+padding: 6px;
+border-radius: 4px;
+}
+.location input:focus {
+outline: none;
+}
   .sidebar {
     position: fixed;
     top: 0;
